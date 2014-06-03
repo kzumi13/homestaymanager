@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/student_preferences"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_petPrefSU"
+        android:text="Pet Peference"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_dogSU"
+        android:text="Dogs"
+        android:layout_below="@id/txt_petPrefSU"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_catSU"
+        android:text="Cats"
+        android:layout_below="@+id/cbox_dogSU"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_noPrefSU"
+        android:text="No Preference"
+        android:layout_below="@+id/cbox_catSU"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_noPetsSU"
+        android:text="No Pets"
+        android:layout_below="@+id/cbox_noPrefSU"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_smokePrefSU"
+        android:text="Smoking Preference"
+        android:textSize="20dp"
+        android:layout_below="@id/cbox_noPetsSU"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_smokeYesSU"
+        android:text="Yes"
+        android:layout_below="@+id/txt_smokePrefSU"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_smokeNoSU"
+        android:text="No"
+        android:layout_below="@+id/cbox_smokeYesSU"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_allergySU"
+        android:text="Allergies"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/cbox_smokeNoSU"
+        android:background="#33B5E5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_allergySU"
+        android:hint="ie. foods, animals"
+        android:layout_below="@+id/txt_allergySU"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_otherInfoSU"
+        android:layout_below="@+id/etxt_allergySU"
+        android:text="Other Information"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_otherInfoSU"
+        android:layout_below="@+id/txt_otherInfoSU"
+        android:height="100dp"
+        android:hint="tell us about yourself"
+        />
+</RelativeLayout>

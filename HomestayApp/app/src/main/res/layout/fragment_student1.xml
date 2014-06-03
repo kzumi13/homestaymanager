@@ -1,0 +1,207 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+    android:fillViewport="false">
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:focusable="false"
+    android:layout_marginLeft="5dip"
+    android:layout_marginTop="15dip"
+    android:layout_marginRight="15dip">
+
+    <ImageView
+        android:layout_width="133dp"
+        android:layout_height="133dp"
+        android:id="@+id/img_studentPic"
+        android:src="@drawable/blank_profile_pic"
+        android:clickable="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="15dp" />
+
+     <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_studentName"
+        android:layout_toRightOf="@+id/img_studentPic"
+        android:layout_alignBottom="@+id/img_studentPic"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Student Name" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_studentPhone"
+        android:layout_below = "@+id/img_studentPic"
+        android:layout_alignLeft="@+id/img_studentPic"
+        android:hint="Enter Phone Number"
+        android:layout_toLeftOf="@+id/cbox_sHide2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/etxt_studentEmail"
+        android:text="myEmail@ucdavis.edu"
+        android:layout_below="@+id/etxt_studentPhone"
+        android:layout_alignRight="@+id/etxt_studentPhone"
+        android:layout_alignEnd="@+id/etxt_studentPhone" />
+
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide"
+        android:id="@+id/cbox_sHide2"
+        android:checked="false"
+        android:layout_below="@+id/etxt_studentPhone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide"
+        android:id="@+id/cbox_sHide1"
+        android:layout_above="@+id/etxt_studentEmail"
+        android:layout_alignRight="@+id/etxt_studentName"
+        android:layout_alignEnd="@+id/etxt_studentName"
+        android:layout_alignLeft="@+id/cbox_sHide2"
+        android:layout_alignStart="@+id/cbox_sHide2"
+        android:checked="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txt_petPref"
+        android:text="Pet Peference"
+        android:textSize="20dp"
+        android:layout_below="@+id/etxt_studentEmail"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cbox_dog"
+        android:text="Dogs"
+        android:layout_below="@id/txt_petPref"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cbox_cat"
+        android:text="Cats"
+        android:layout_below="@+id/cbox_dog"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cbox_noPref"
+        android:text="No Preference"
+        android:layout_below="@+id/cbox_cat"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cbox_noPets"
+        android:text="No Pets"
+        android:layout_below="@+id/cbox_noPref"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txt_smokePref"
+        android:text="Smoking Preference"
+        android:textSize="20dp"
+        android:layout_below="@id/cbox_noPets"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cbox_smokeYes"
+        android:text="Yes"
+        android:layout_below="@+id/txt_smokePref"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cbox_smokeNo"
+        android:text="No"
+        android:layout_below="@+id/cbox_smokeYes"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txt_allergy"
+        android:text="Allergies"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/cbox_smokeNo"
+        android:background="#33B5E5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/etxt_allergy"
+        android:hint="ie. foods, animals"
+        android:layout_below="@+id/txt_allergy"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txt_otherInfo"
+        android:layout_below="@+id/etxt_allergy"
+        android:text="Other Information"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/etxt_studentEmail"
+        android:layout_alignEnd="@+id/etxt_studentEmail"
+        android:background="#33B5E5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/etxt_otherInfo"
+        android:layout_below="@+id/txt_otherInfo"
+        android:height="100dp"
+        android:hint="tell us about yourself"
+
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide"
+        android:id="@+id/cbox_sHide3"
+        android:checked="false"
+        android:layout_alignBottom="@+id/txt_otherInfo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/btn_sSave"
+        android:layout_below="@+id/etxt_otherInfo"
+        android:text="Save Changes"
+        android:background="#808080"
+        android:layout_marginBottom="20dp"
+        />
+
+</RelativeLayout>
+</ScrollView>

@@ -2,8 +2,8 @@
 <pre-dex-items>
 
     <item
-        dex="C:\Users\Chiharu\AndroidStudioProjects\HomestayApp\app\build\pre-dexed\debug\classes-a98bb5347e4f17d6b0b37cb46fe774b1696c5953.jar"
-        jar="C:\Users\Chiharu\AndroidStudioProjects\HomestayApp\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        dex="C:\Users\Chiharu\homestaymanager\HomestayApp\app\build\pre-dexed\debug\classes-a759f5e9a7846791ad1730a3936e535d68c66c4d.jar"
+        jar="C:\Users\Chiharu\homestaymanager\HomestayApp\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
         jumboMode="false"
         revision="19.0.0"
         sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
@@ -13,5 +13,11 @@
         jumboMode="false"
         revision="19.0.0"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="C:\Users\Chiharu\AndroidStudioProjects\HomestayApp\app\build\pre-dexed\debug\classes-a98bb5347e4f17d6b0b37cb46fe774b1696c5953.jar"
+        jar="C:\Users\Chiharu\AndroidStudioProjects\HomestayApp\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="19.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
 
 </pre-dex-items>

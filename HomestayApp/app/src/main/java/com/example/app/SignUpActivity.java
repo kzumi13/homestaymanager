@@ -87,6 +87,17 @@ public class SignUpActivity extends ActionBarActivity {
                 }
             case R.id.rbtn_admin:
                 if (checked){
+                    if(studentPref != null) {
+                        //need to save te view
+                        View removeStudentPref = findViewById(R.id.student_preferences);
+                        ViewGroup parent = (ViewGroup) removeStudentPref.getParent();
+                        parent.removeView(removeStudentPref);
+                    }
+                    if(hostPref != null){
+                        View removeHostPref = findViewById(R.id.host_preferences);
+                        ViewGroup parent = (ViewGroup) removeHostPref.getParent();
+                        parent.removeView(removeHostPref);
+                    }
                     break;
                 }
         }

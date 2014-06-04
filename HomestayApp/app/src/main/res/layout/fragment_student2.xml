@@ -21,7 +21,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="500dp"
-        android:id="@+id/listView_matches"
+        android:id="@+id/listView_sMatches"
         android:layout_weight="5.65" />
 
     <Button

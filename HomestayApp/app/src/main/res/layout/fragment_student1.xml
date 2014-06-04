@@ -78,7 +78,7 @@ android:layout_height="fill_parent"
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/txt_petPref"
+        android:id="@+id/txt_sPetPref"
         android:text="Pet Peference"
         android:textSize="20dp"
         android:layout_below="@+id/etxt_studentEmail"
@@ -90,13 +90,13 @@ android:layout_height="fill_parent"
         android:layout_height="match_parent"
         android:id="@+id/cbox_dog"
         android:text="Dogs"
-        android:layout_below="@id/txt_petPref"
+        android:layout_below="@id/txt_sPetPref"
         />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cbox_cat"
+        android:id="@+id/cbox_sCat"
         android:text="Cats"
         android:layout_below="@+id/cbox_dog"
         />
@@ -104,17 +104,17 @@ android:layout_height="fill_parent"
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cbox_noPref"
+        android:id="@+id/cbox_sNoPref"
         android:text="No Preference"
-        android:layout_below="@+id/cbox_cat"
+        android:layout_below="@+id/cbox_sCat"
         />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cbox_noPets"
+        android:id="@+id/cbox_sNoPets"
         android:text="No Pets"
-        android:layout_below="@+id/cbox_noPref"
+        android:layout_below="@+id/cbox_sNoPref"
         />
 
     <TextView
@@ -123,14 +123,14 @@ android:layout_height="fill_parent"
         android:id="@+id/txt_smokePref"
         android:text="Smoking Preference"
         android:textSize="20dp"
-        android:layout_below="@id/cbox_noPets"
+        android:layout_below="@id/cbox_sNoPets"
         android:layout_marginTop="20dp"
         android:background="#33B5E5" />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cbox_smokeYes"
+        android:id="@+id/cbox_sSmokeYes"
         android:text="Yes"
         android:layout_below="@+id/txt_smokePref"
         />
@@ -138,9 +138,9 @@ android:layout_height="fill_parent"
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cbox_smokeNo"
+        android:id="@+id/cbox_sSmokeNo"
         android:text="No"
-        android:layout_below="@+id/cbox_smokeYes"
+        android:layout_below="@+id/cbox_sSmokeYes"
         />
 
     <TextView
@@ -150,7 +150,7 @@ android:layout_height="fill_parent"
         android:text="Allergies"
         android:textSize="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/cbox_smokeNo"
+        android:layout_below="@+id/cbox_sSmokeNo"
         android:background="#33B5E5" />
 
     <EditText
@@ -164,7 +164,7 @@ android:layout_height="fill_parent"
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/txt_otherInfo"
+        android:id="@+id/txt_sOtherInfo"
         android:layout_below="@+id/etxt_allergy"
         android:text="Other Information"
         android:textSize="20dp"
@@ -176,8 +176,8 @@ android:layout_height="fill_parent"
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/etxt_otherInfo"
-        android:layout_below="@+id/txt_otherInfo"
+        android:id="@+id/etxt_sOtherInfo"
+        android:layout_below="@+id/txt_sOtherInfo"
         android:height="100dp"
         android:hint="tell us about yourself"
 
@@ -189,7 +189,7 @@ android:layout_height="fill_parent"
         android:text="Hide"
         android:id="@+id/cbox_sHide3"
         android:checked="false"
-        android:layout_alignBottom="@+id/txt_otherInfo"
+        android:layout_alignBottom="@+id/txt_sOtherInfo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -197,7 +197,17 @@ android:layout_height="fill_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/btn_sSave"
-        android:layout_below="@+id/etxt_otherInfo"
+        android:layout_below="@+id/etxt_sOtherInfo"
+        android:text="Save Changes"
+        android:background="#808080"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/btn_sUndo"
+        android:layout_below="@+id/etxt_sOtherInfo"
         android:text="Save Changes"
         android:background="#808080"
         android:layout_marginBottom="20dp"

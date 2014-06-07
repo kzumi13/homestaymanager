@@ -23,7 +23,7 @@
     <ImageView
         android:layout_width="133dp"
         android:layout_height="133dp"
-        android:id="@+id/img_studentPic"
+        android:id="@+id/img_profile"
         android:src="@drawable/blank_profile_pic"
         android:clickable="true"
         android:layout_gravity="center_horizontal"
@@ -58,6 +58,14 @@
         android:ems="10"
         android:id="@+id/etxt_remail"
         android:hint="Re-enter Email" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/etet_address"
+        android:hint="Enter Mailing Address" />
 
     <EditText
         android:layout_width="match_parent"
@@ -100,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Male"
-            android:id="@+id/rbt_male"
+            android:id="@+id/rbtn_male"
             android:checked="false" />
     </RadioGroup>
 

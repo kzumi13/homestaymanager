@@ -13,6 +13,14 @@
         android:textSize="40dp"
         android:background="#33B5E5" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/blank_profile_pic"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="15dp" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,8 +62,7 @@
         android:id="@+id/btn_signUp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="140dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp" />
 
 </LinearLayout>

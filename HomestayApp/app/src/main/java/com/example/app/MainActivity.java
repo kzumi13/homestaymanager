@@ -64,7 +64,7 @@ public class MainActivity extends ActionBarActivity {
                     startActivity(intent);
                 }
                 */
-                Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                Intent intent = new Intent(MainActivity.this, HostActivity.class);
                 startActivity(intent);
             }
         });

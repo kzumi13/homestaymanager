@@ -53,19 +53,19 @@ public class AdminActivity extends ActionBarActivity implements ActionBar.TabLis
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         ActionBar.Tab tab1 = actionBar.newTab();
-        tab1.setText("PROF");
+        tab1.setText("Profile");
         tab1.setTabListener(this);
 
         ActionBar.Tab tab2 = actionBar.newTab();
-        tab2.setText("STUD");
+        tab2.setText("Students");
         tab2.setTabListener(this);
 
         ActionBar.Tab tab3 = actionBar.newTab();
-        tab3.setText("HOST");
+        tab3.setText("Hosts");
         tab3.setTabListener(this);
 
         ActionBar.Tab tab4 = actionBar.newTab();
-        tab4.setText("MATC");
+        tab4.setText("Matches");
         tab4.setTabListener(this);
 
         //Add the tabs

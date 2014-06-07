@@ -61,9 +61,19 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         tab2.setText("My Matches");
         tab2.setTabListener(this);
 
+        ActionBar.Tab tab3= actionBar.newTab();
+        tab3.setText("Placement Wizard");
+        tab3.setTabListener(this);
+
+        ActionBar.Tab tab4 = actionBar.newTab();
+        tab4.setText("Manual Selection");
+        tab4.setTabListener(this);
+
         //Add the tabs
         actionBar.addTab(tab1);
         actionBar.addTab(tab2);
+        actionBar.addTab(tab3);
+        actionBar.addTab(tab4);
     }
 
 
@@ -108,7 +118,7 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
 //Make pager adapter class
 class StudentAdapter extends FragmentStatePagerAdapter
 {
-    private static final int NUMTABS = 2; //Number of tabes in our student activity
+    private static final int NUMTABS = 4; //Number of tabes in our student activity
 
     public StudentAdapter(FragmentManager fm) {
         super(fm);
@@ -125,7 +135,12 @@ class StudentAdapter extends FragmentStatePagerAdapter
         else if(position == 1){
             fragment = new Student2Fragment();
         }
-
+        else if(position == 2){
+            fragment = new Student3Fragment();
+        }
+        else if(position == 3){
+            fragment = new Student4Fragment();
+        }
         //for extra fragment if needed
         //else if(position == 2){
         //    fragment = new Student3Fragment();

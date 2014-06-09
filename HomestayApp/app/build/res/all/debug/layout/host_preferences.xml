@@ -149,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No"
-            android:id="@+id/rbtnsmokeNoHU"
+            android:id="@+id/rbtn_smokeNoHU"
             android:checked="false" />
     </RadioGroup>
 

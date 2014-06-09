@@ -30,6 +30,7 @@ public class SignUpActivity extends ActionBarActivity {
     //TODO: find a way to save the data
     //TODO: impliment dynamic prefference input
 
+    public static String userName;
     private static final int REQUEST_CODE= 1;
 
     //date picker stuff
@@ -84,7 +85,7 @@ public class SignUpActivity extends ActionBarActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
@@ -97,38 +98,6 @@ public class SignUpActivity extends ActionBarActivity {
         passwordEtxt = (EditText) findViewById(R.id.etxt_password);
         genderMRbtn = (RadioButton) findViewById(R.id.rbtn_male);
         genderFRbtn = (RadioButton) findViewById(R.id.rbtn_female);
-
-        //Student declarations
-        student_date1 = (EditText)findViewById(R.id.etxt_date1SU);
-        student_date2 = (EditText)findViewById(R.id.etxt_date2SU);
-        sdistanceEtxt = (EditText) findViewById(R.id.etxt_distanceSU);
-        sdogCbox = (CheckBox) findViewById(R.id.cbox_dogSU);
-        scatCbox = (CheckBox) findViewById(R.id.cbox_catSU);
-        snoPreferenceCbox = (CheckBox) findViewById(R.id.cbox_catSU);
-        snoPetsCbox = (CheckBox) findViewById(R.id.cbox_catSU);
-        ssmokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_smokeYesSU);
-        ssmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_smokeNoSU);
-        schildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesSU);
-        schildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoSU);
-        sotherInfoEtxt = (EditText) findViewById(R.id.etxt_otherInfoSU);
-
-        //Host declarations
-        host_date1 = (EditText) findViewById(R.id.etxt_date1HU);
-        host_date2 = (EditText)findViewById(R.id.etxt_date2HU);
-        hdistanceEtxt = (EditText) findViewById(R.id.etxt_distanceHU);
-        hdogCbox = (CheckBox) findViewById(R.id.cbox_dogHU);
-        hcatCbox = (CheckBox) findViewById(R.id.cbox_catHU);
-        hnoPetsCbox = (CheckBox) findViewById(R.id.cbox_catHU);
-        hsmokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_smokeYesHU);
-        hsmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_smokeNoSU);
-        hgpMaleRbtn = (RadioButton) findViewById(R.id.rbtn_prefMaleHU);
-        hgpFemaleRbtn = (RadioButton) findViewById(R.id.rbtn_prefFemaleHU);
-        hgpNoneRbtn = (RadioButton) findViewById(R.id.rbtn_noGenderPrefHU);
-        hchildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesHU);
-        hchildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoHU);
-        hotherInfoEtxt = (EditText) findViewById(R.id.etxt_otherInfoHU);
-
-
 
         //set on click listener for Image
         // begin imgView stuff -------------------------------------------------------------------------------------------------------
@@ -162,30 +131,98 @@ public class SignUpActivity extends ActionBarActivity {
             public void onClick(View view) {
                 //TODO: Check to see if info is valid
 
-                Firebase userRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + userNameEtxt.getText().toString());
+                Firebase baseRef = new Firebase("https://popping-fire-8794.firebaseio.com/users");
+                Firebase userRef = baseRef.child(userNameEtxt.getText().toString());
+
+                userName = userNameEtxt.getText().toString();
 
                 userRef.child("name").setValue(nameEtxt.getText().toString());
                 userRef.child("email").setValue(emailEtxt.getText().toString());
                 userRef.child("password").setValue(passwordEtxt.getText().toString());
                 if(genderMRbtn.isChecked())
-                    userRef.child("gender").setValue("Male");
+                    userRef.child("gender").setValue("m");
                 else if(genderFRbtn.isChecked())
-                    userRef.child("gender").setValue("Female");
+                    userRef.child("gender").setValue("f");
 
+                //Student account type selected
                 if(student_rbtn.isChecked()) {
+                    userRef.child("profileType").setValue("student");
+                    userRef.child("date1").setValue(student_date1.getText().toString());
+                    userRef.child("date2").setValue(student_date2.getText().toString());
+                    userRef.child("distance").setValue(sdistanceEtxt.getText().toString());
+                    if(sdogCbox.isChecked())
+                        userRef.child("dog").setValue("y");
+                    else
+                        userRef.child("dog").setValue("n");
+                    if(scatCbox.isChecked())
+                        userRef.child("cat").setValue("y");
+                    else
+                        userRef.child("cat").setValue("n");
+                    if(snoPreferenceCbox.isChecked()) {
+                        userRef.child("dog").setValue("idc");
+                        userRef.child("cat").setValue("idc");
+                    }
+                    if(snoPetsCbox.isChecked()){
+                        userRef.child("dog").setValue("n");
+                        userRef.child("cat").setValue("n");
+                    }
+                    if(ssmokeYesRBtn.isChecked())
+                        userRef.child("smoke").setValue("y");
+                    if(ssmokeNoRbtn.isChecked())
+                        userRef.child("smoke").setValue("n");
+                    if(schildYesRbtn.isChecked())
+                        userRef.child("child").setValue("y");
+                    if(schildNoRbtn.isChecked())
+                        userRef.child("child").setValue("n");
+                    userRef.child("info").setValue(sotherInfoEtxt.getText().toString());
                     Toast.makeText(getApplicationContext(), "Student Profile", Toast.LENGTH_SHORT).show();
-
                     Intent intent = new Intent(SignUpActivity.this, StudentActivity.class);
                     startActivity(intent);
                 }
-                if(host_rbtn.isChecked()) {
-                    Toast.makeText(getApplicationContext(), "Host Profile", Toast.LENGTH_SHORT).show();
 
+                //host account type selected
+                else if(host_rbtn.isChecked()) {
+
+                    //userRef.child("date1").setValue(host_date1.getText().toString());
+                    //userRef.child("date2").setValue(host_date2.getText().toString());
+
+                    userRef.child("profileType").setValue("host");
+                    userRef.child("distance").setValue(hdistanceEtxt.getText().toString());
+                    if(hdogCbox.isChecked())
+                        userRef.child("dog").setValue("y");
+                    else
+                        userRef.child("dog").setValue("n");
+                    if(hcatCbox.isChecked())
+                        userRef.child("cat").setValue("y");
+                    else
+                        userRef.child("cat").setValue("n");
+                    if(hnoPetsCbox.isChecked()){
+                        userRef.child("dog").setValue("n");
+                        userRef.child("cat").setValue("n");
+                    }
+                    if(hgpMaleRbtn.isChecked())
+                        userRef.child("genderPref").setValue("m");
+                    if(hgpFemaleRbtn.isChecked())
+                        userRef.child("genderPref").setValue("f");
+                    if(hgpNoneRbtn.isChecked())
+                        userRef.child("genderPref").setValue("idc");
+                    if(hsmokeYesRBtn.isChecked())
+                        userRef.child("smoke").setValue("y");
+                    if(hsmokeNoRbtn.isChecked())
+                        userRef.child("smoke").setValue("n");
+                    if(hchildYesRbtn.isChecked())
+                        userRef.child("child").setValue("y");
+                    if(hchildNoRbtn.isChecked())
+                        userRef.child("child").setValue("n");
+                    userRef.child("info").setValue(hotherInfoEtxt.getText().toString());
+
+                    Toast.makeText(getApplicationContext(), "Host Profile", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUpActivity.this, HostActivity.class);
                     startActivity(intent);
-
                 }
-                if(admin_rbtn.isChecked()) {
+
+                //admin account type selected
+                else if(admin_rbtn.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Admin Profile", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUpActivity.this, AdminActivity.class);
                     startActivity(intent);
@@ -295,6 +332,18 @@ public class SignUpActivity extends ActionBarActivity {
                         //Inflate Student Preference Information View
                         View showStudentPref = getLayoutInflater().inflate(R.layout.student_preferences, myLayout, false);
                         myLayout.addView(showStudentPref);
+                        student_date1 = (EditText)findViewById(R.id.etxt_date1SU);
+                        student_date2 = (EditText)findViewById(R.id.etxt_date2SU);
+                        sdistanceEtxt = (EditText) findViewById(R.id.etxt_distanceSU);
+                        sdogCbox = (CheckBox) findViewById(R.id.cbox_dogSU);
+                        scatCbox = (CheckBox) findViewById(R.id.cbox_catSU);
+                        snoPreferenceCbox = (CheckBox) findViewById(R.id.cbox_catSU);
+                        snoPetsCbox = (CheckBox) findViewById(R.id.cbox_catSU);
+                        ssmokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_smokeYesSU);
+                        ssmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_smokeNoSU);
+                        schildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesSU);
+                        schildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoSU);
+                        sotherInfoEtxt = (EditText) findViewById(R.id.etxt_otherInfoSU);
                     }
                     break;
                 }
@@ -309,6 +358,20 @@ public class SignUpActivity extends ActionBarActivity {
                     if(hostPref == null){
                         View showHostPref = getLayoutInflater().inflate(R.layout.host_preferences, myLayout, false);
                         myLayout.addView(showHostPref);
+                        host_date1 = (EditText) findViewById(R.id.etxt_date1HU);
+                        host_date2 = (EditText)findViewById(R.id.etxt_date2HU);
+                        hdistanceEtxt = (EditText) findViewById(R.id.etxt_distanceHU);
+                        hdogCbox = (CheckBox) findViewById(R.id.cbox_dogHU);
+                        hcatCbox = (CheckBox) findViewById(R.id.cbox_catHU);
+                        hnoPetsCbox = (CheckBox) findViewById(R.id.cbox_catHU);
+                        hsmokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_smokeYesHU);
+                        hsmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_smokeNoHU);
+                        hgpMaleRbtn = (RadioButton) findViewById(R.id.rbtn_prefMaleHU);
+                        hgpFemaleRbtn = (RadioButton) findViewById(R.id.rbtn_prefFemaleHU);
+                        hgpNoneRbtn = (RadioButton) findViewById(R.id.rbtn_noGenderPrefHU);
+                        hchildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesHU);
+                        hchildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoHU);
+                        hotherInfoEtxt = (EditText) findViewById(R.id.etxt_otherInfoHU);
                     }
                     break;
                 }

@@ -401,6 +401,7 @@ int id rbtn_sChildNo 0x7f0700a6
 int id rbtn_sChildYes 0x7f0700a5
 int id rbtn_sSmokeNo 0x7f0700a0
 int id rbtn_sSmokeYes 0x7f07009f
+int id rbtn_smokeNoHU 0x7f0700d8
 int id rbtn_smokeNoSU 0x7f0700f4
 int id rbtn_smokeYesHU 0x7f0700d7
 int id rbtn_smokeYesSU 0x7f0700f3
@@ -409,7 +410,6 @@ int id rbtn_swChildNo 0x7f0700c3
 int id rbtn_swChildYes 0x7f0700c2
 int id rbtn_swSmokeNo 0x7f0700bf
 int id rbtn_swSmokeYes 0x7f0700be
-int id rbtnsmokeNoHU 0x7f0700d8
 int id rg_childrenHU 0x7f0700df
 int id rg_childrenSU 0x7f0700f8
 int id rg_genderPrefHU 0x7f0700da

@@ -24,6 +24,8 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+
+
 public class MainActivity extends ActionBarActivity {
 
     Fragment    fragment;
@@ -38,11 +40,11 @@ public class MainActivity extends ActionBarActivity {
 
         //FIREBASE!------------------------------------------------------------------------------------
         // Create a reference to a Firebase location
-        Firebase ref = new Firebase("https://popping-fire-8794.firebaseio.com/users");
+        //Firebase ref = new Firebase("https://popping-fire-8794.firebaseio.com/users");
 
         // Write data to Firebase
-        ref.setValue("we dont love firebase");
-        ref.child("subuser").setValue("please work");
+        //ref.setValue("we dont love firebase");
+        //ref.child("subuser").setValue("please work");
 
         //Firebase childRef = ref.child("subuser");
         //childRef.child("subsubuser").setValue("value");

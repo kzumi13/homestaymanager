@@ -1096,6 +1096,7 @@ containing a value of this type.
         public static final int rbtn_sChildYes=0x7f0700a5;
         public static final int rbtn_sSmokeNo=0x7f0700a0;
         public static final int rbtn_sSmokeYes=0x7f07009f;
+        public static final int rbtn_smokeNoHU=0x7f0700d8;
         public static final int rbtn_smokeNoSU=0x7f0700f4;
         public static final int rbtn_smokeYesHU=0x7f0700d7;
         public static final int rbtn_smokeYesSU=0x7f0700f3;
@@ -1104,7 +1105,6 @@ containing a value of this type.
         public static final int rbtn_swChildYes=0x7f0700c2;
         public static final int rbtn_swSmokeNo=0x7f0700bf;
         public static final int rbtn_swSmokeYes=0x7f0700be;
-        public static final int rbtnsmokeNoHU=0x7f0700d8;
         public static final int rg_childrenHU=0x7f0700df;
         public static final int rg_childrenSU=0x7f0700f8;
         public static final int rg_genderPrefHU=0x7f0700da;

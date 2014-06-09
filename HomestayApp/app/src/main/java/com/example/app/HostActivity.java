@@ -25,6 +25,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
+import com.firebase.client.Firebase;
+
 import java.util.Calendar;
 
 
@@ -129,6 +131,7 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
         viewPager.setAdapter(new HostAdapter(fragmentManager));
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 //NO IMPLEMENTATION NEEDED

@@ -14,6 +14,12 @@
         revision="19.0.0"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
     <item
+        dex="C:\Users\Chiharu\homestaymanager\HomestayApp\app\build\pre-dexed\debug\firebase-client-jvm-LATEST-d5814a44c5d27877bd165d797a37c5b6a2b0b703.jar"
+        jar="C:\Users\Chiharu\homestaymanager\HomestayApp\app\libs\firebase-client-jvm-LATEST.jar"
+        jumboMode="false"
+        revision="19.0.0"
+        sha1="fc1173d54caca22acada4742a4651bfa66470e9e"/>
+    <item
         dex="C:\Users\Chiharu\AndroidStudioProjects\HomestayApp\app\build\pre-dexed\debug\classes-a98bb5347e4f17d6b0b37cb46fe774b1696c5953.jar"
         jar="C:\Users\Chiharu\AndroidStudioProjects\HomestayApp\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
         jumboMode="false"

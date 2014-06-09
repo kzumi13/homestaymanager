@@ -19,6 +19,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
 public class MainActivity extends ActionBarActivity {
 
     Fragment    fragment;
@@ -30,6 +35,31 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //FIREBASE!------------------------------------------------------------------------------------
+        // Create a reference to a Firebase location
+        Firebase ref = new Firebase("https://popping-fire-8794.firebaseio.com/users");
+
+        // Write data to Firebase
+        ref.setValue("we dont love firebase");
+        ref.child("subuser").setValue("please work");
+
+        //Firebase childRef = ref.child("subuser");
+        //childRef.child("subsubuser").setValue("value");
+
+        // Read data and react to changes
+        /*
+        ref.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot snap) {
+                System.out.println(snap.getName() + " -> " + snap.getValue());
+            }
+
+            @Override public void onCancelled(FirebaseError error) { }
+        });
+        */
+        //END FIREBASE!-------------------------------------------------------------------------------------
 
         /*if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

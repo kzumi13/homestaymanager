@@ -19,6 +19,11 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
 import java.util.Calendar;
 
 public class SignUpActivity extends ActionBarActivity {
@@ -43,7 +48,6 @@ public class SignUpActivity extends ActionBarActivity {
     private EditText nameEtxt;
     private EditText emailEtxt;
     private EditText passwordEtxt;
-    private EditText rePasswordEtxt;
     private RadioButton genderMRbtn;
     private RadioButton genderFRbtn;
     private Button finishBtn;
@@ -91,7 +95,6 @@ public class SignUpActivity extends ActionBarActivity {
         nameEtxt = (EditText) findViewById(R.id.etxt_name);
         emailEtxt = (EditText) findViewById(R.id.etxt_signUpEmail);
         passwordEtxt = (EditText) findViewById(R.id.etxt_password);
-        rePasswordEtxt = (EditText) findViewById(R.id.etxt_repassword);
         genderMRbtn = (RadioButton) findViewById(R.id.rbtn_male);
         genderFRbtn = (RadioButton) findViewById(R.id.rbtn_female);
 
@@ -141,6 +144,7 @@ public class SignUpActivity extends ActionBarActivity {
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });
+
         // END image stuff -----------------------------------------------------------------------------
 
         // BEGIN finish Button -------------------------------------------------------------
@@ -151,17 +155,28 @@ public class SignUpActivity extends ActionBarActivity {
         host_rbtn = (RadioButton) findViewById(R.id.rbtn_host);
         admin_rbtn = (RadioButton) findViewById(R.id.rbtn_admin);
 
-        // Set Finish button stuff
+        // Set Finish button stuff ------------------------------------------------------------------------------------------------
         finishBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 //TODO: Check to see if info is valid
+
+                Firebase userRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + userNameEtxt.getText().toString());
+
+                userRef.child("name").setValue(nameEtxt.getText().toString());
+                userRef.child("email").setValue(emailEtxt.getText().toString());
+                userRef.child("password").setValue(passwordEtxt.getText().toString());
+                if(genderMRbtn.isChecked())
+                    userRef.child("gender").setValue("Male");
+                else if(genderFRbtn.isChecked())
+                    userRef.child("gender").setValue("Female");
+
                 if(student_rbtn.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Student Profile", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(SignUpActivity.this, StudentActivity.class);
                     startActivity(intent);
-
                 }
                 if(host_rbtn.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Host Profile", Toast.LENGTH_SHORT).show();

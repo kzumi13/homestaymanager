@@ -50,6 +50,7 @@ public class Student1Fragment extends Fragment {
     private RadioButton gpYesRbtn;
     private RadioButton gpNoRbtn;
     private RadioButton gpNoneRbtn;
+    private EditText allergy;
     private  RadioButton childYesRbtn;
     private RadioButton childNoRbtn;
     private EditText otherInfoEtxt;
@@ -76,6 +77,7 @@ public class Student1Fragment extends Fragment {
         noPetsCbox  = (CheckBox) rootView.findViewById(R.id.cbox_sNoPets);
         smokeYesRbtn = (RadioButton) rootView.findViewById(R.id.rbtn_sSmokeYes);
         smokeNoRbtn = (RadioButton) rootView.findViewById(R.id.rbtn_sSmokeNo);
+        allergy = (EditText) rootView.findViewById(R.id.etxt_sAllergy);
         childYesRbtn = (RadioButton) rootView.findViewById(R.id.rbtn_sChildYes);
         childNoRbtn = (RadioButton) rootView.findViewById(R.id.rbtn_sChildNo);
         otherInfoEtxt  = (EditText) rootView.findViewById(R.id.etxt_sOtherInfo);
@@ -115,6 +117,7 @@ public class Student1Fragment extends Fragment {
                         smokeYesRbtn.setChecked(true);
                     else
                         smokeNoRbtn.setChecked(true);
+                    allergy.setText((String)((Map)value).get("allergy"));
                     if(((Map)value).get("child").equals("y"))
                         childYesRbtn.setChecked(true);
                     else
@@ -127,6 +130,49 @@ public class Student1Fragment extends Fragment {
             @Override
             public void onCancelled(FirebaseError error) {
                 System.err.println("Listener was cancelled");
+            }
+        });
+
+
+        //onclick for saveBtn --------------------------------------------------------------------------------------------------
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Firebase userRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + MainActivity.userName);
+                userRef.child("name").setValue(nameEtxt.getText().toString());
+                userRef.child("email").setValue(emailEtxt.getText().toString());
+                userRef.child("address").setValue(addressEtxt.getText().toString());
+                userRef.child("phone").setValue(phoneNumberEtxt.getText().toString());
+                userRef.child("profileType").setValue("student");
+                userRef.child("date1").setValue(date1Etxt.getText().toString());
+                userRef.child("date2").setValue(date2Etxt.getText().toString());
+                userRef.child("distance").setValue(distanceEtxt.getText().toString());
+                if(dogCbox.isChecked())
+                    userRef.child("dog").setValue("y");
+                else
+                    userRef.child("dog").setValue("n");
+                if(catCbox.isChecked())
+                    userRef.child("cat").setValue("y");
+                else
+                    userRef.child("cat").setValue("n");
+                if(noPreferenceCbox.isChecked()) {
+                    userRef.child("dog").setValue("idc");
+                    userRef.child("cat").setValue("idc");
+                }
+                if(noPetsCbox.isChecked()){
+                    userRef.child("dog").setValue("n");
+                    userRef.child("cat").setValue("n");
+                }
+                if(smokeYesRbtn.isChecked())
+                    userRef.child("smoke").setValue("y");
+                if(smokeNoRbtn.isChecked())
+                    userRef.child("smoke").setValue("n");
+                userRef.child("allergy").setValue(allergy.getText().toString());
+                if(childYesRbtn.isChecked())
+                    userRef.child("child").setValue("y");
+                if(childNoRbtn.isChecked())
+                    userRef.child("child").setValue("n");
+                userRef.child("info").setValue(otherInfoEtxt.getText().toString());
             }
         });
 

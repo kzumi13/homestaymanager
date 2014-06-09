@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\Curtis\homestaymanager\homestaymanager\HomestayApp\app\build\pre-dexed\debug\classes-71b4f7274edc5dc1861007f1cfa1538c7b2f1499.jar"
+        jar="C:\Users\Curtis\homestaymanager\homestaymanager\HomestayApp\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="19.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="C:\Users\Curtis\homestaymanager\homestaymanager\HomestayApp\app\build\pre-dexed\debug\support-v4-19.1.0-e311e493b238b75da4095bd5ee7b69d76d73dc42.jar"
+        jar="C:\Program Files (x86)\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="C:\Users\Curtis\homestaymanager\homestaymanager\HomestayApp\app\build\pre-dexed\debug\firebase-client-jvm-LATEST-8ae743316ba941054b46c9304328aeb84cdecdee.jar"
+        jar="C:\Users\Curtis\homestaymanager\homestaymanager\HomestayApp\app\libs\firebase-client-jvm-LATEST.jar"
+        jumboMode="false"
+        revision="19.0.0"
+        sha1="fc1173d54caca22acada4742a4651bfa66470e9e"/>
+
+</pre-dex-items>

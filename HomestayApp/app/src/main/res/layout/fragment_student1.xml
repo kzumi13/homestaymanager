@@ -1,8 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
     android:fillViewport="false">
-
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -15,7 +14,7 @@
     <ImageView
         android:layout_width="133dp"
         android:layout_height="133dp"
-        android:id="@+id/img_hProfile"
+        android:id="@+id/img_sProfile"
         android:src="@drawable/blank_profile_pic"
         android:clickable="true"
         android:layout_gravity="center_horizontal"
@@ -24,12 +23,12 @@
         android:layout_alignParentStart="true"
         android:layout_marginRight="15dp" />
 
-    <EditText
+     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etxt_hName"
-        android:layout_toRightOf="@+id/img_hProfile"
-        android:layout_alignBottom="@+id/img_hProfile"
+        android:id="@+id/etxt_sName"
+        android:layout_toRightOf="@+id/img_sProfile"
+        android:layout_alignBottom="@+id/img_sProfile"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:text="Student Name" />
@@ -37,78 +36,68 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etxt_hPhone"
-        android:layout_below = "@+id/img_hProfile"
-        android:layout_alignLeft="@+id/img_hProfile"
+        android:id="@+id/etxt_sPhone"
+        android:layout_below = "@+id/img_sProfile"
+        android:layout_alignLeft="@+id/img_sProfile"
         android:hint="Enter Phone Number"
-        android:layout_toLeftOf="@+id/cbox_hHide2" />
+        android:layout_toLeftOf="@+id/cbox_sHide2" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/etxt_hEmail"
+        android:id="@+id/etxt_sEmail"
         android:text="myEmail@ucdavis.edu"
-        android:layout_below="@+id/etxt_hPhone"
-        android:layout_alignRight="@+id/etxt_hPhone"
-        android:layout_alignEnd="@+id/etxt_hPhone" />
+        android:layout_below="@+id/etxt_sPhone"
+        android:layout_alignRight="@+id/etxt_sPhone"
+        android:layout_alignEnd="@+id/etxt_sPhone" />
+
+
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hide"
-        android:id="@+id/cbox_hHide2"
+        android:id="@+id/cbox_sHide2"
         android:checked="false"
-        android:layout_below="@+id/etxt_hPhone"
+        android:layout_below="@+id/etxt_sPhone"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-        <CheckBox
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hide"
-        android:id="@+id/cbox_hHide1"
-        android:layout_above="@+id/etxt_hEmail"
-        android:layout_alignRight="@+id/etxt_hName"
-        android:layout_alignEnd="@+id/etxt_hName"
-        android:layout_alignLeft="@+id/cbox_hHide2"
-        android:layout_alignStart="@+id/cbox_hHide2"
+        android:id="@+id/cbox_sHide1"
+        android:layout_above="@+id/etxt_sEmail"
+        android:layout_alignRight="@+id/etxt_sName"
+        android:layout_alignEnd="@+id/etxt_sName"
+        android:layout_alignLeft="@+id/cbox_sHide2"
+        android:layout_alignStart="@+id/cbox_sHide2"
         android:checked="false" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hide"
-        android:id="@+id/cbox_hHide3"
-        android:checked="false"
-        android:layout_below="@+id/etxt_hEmail"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/etxt_hAddress"
+        android:id="@+id/etxt_sAddress"
         android:hint="Enter Mailing Address"
-        android:layout_below="@+id/etxt_hEmail"
-        android:layout_alignRight="@+id/etxt_hPhone"
-        android:layout_alignEnd="@+id/etxt_hPhone" />
-
+        android:layout_below="@+id/etxt_sEmail"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Availability Dates"
-        android:id="@+id/txt_hDate"
-        android:layout_below="@id/etxt_hAddress"
+        android:text="Arrival and Departure Dates"
+        android:id="@+id/txt_sDate"
         android:textSize="20dp"
+        android:layout_marginTop="20dp"
         android:background="#33B5E5"
+        android:layout_below="@+id/etxt_sAddress"
         />
 
 
     <EditText
-        android:id="@+id/etxt_hDate1"
+        android:id="@+id/etxt_sDate1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="5"
@@ -117,31 +106,31 @@
         android:clickable="false"
         android:focusable="false"
         android:editable="false"
-        android:layout_below="@id/txt_hDate">
+        android:layout_below="@id/txt_sDate">
         <requestFocus />
     </EditText>
     <ImageButton
-        android:id="@+id/ibtn_hDate1"
+        android:id="@+id/ibtn_sDate1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/etxt_hDate1"
-        android:layout_toRightOf="@+id/etxt_hDate1"
+        android:layout_alignBottom="@+id/etxt_sDate1"
+        android:layout_toRightOf="@+id/etxt_sDate1"
         android:cropToPadding="true"
-        android:onClick="hSelectDate1"/>
+        android:onClick="studentSelectDate1"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="to"
-        android:layout_toRightOf="@+id/ibtn_hDate1"
-        android:layout_alignBottom="@+id/etxt_hDate1"
+        android:layout_toRightOf="@+id/ibtn_sDate1"
+        android:layout_alignBottom="@+id/etxt_sDate1"
         android:paddingTop="27dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:id="@+id/h_txt_student_to"/>
+        android:id="@+id/s_txt_student_to"/>
 
     <EditText
-        android:id="@+id/etxt_hDate2"
+        android:id="@+id/etxt_sDate2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:longClickable="false"
@@ -150,143 +139,132 @@
         android:clickable="false"
         android:ems="5"
         android:inputType="date"
-        android:layout_toRightOf="@id/h_txt_student_to"
-        android:layout_alignBottom="@+id/etxt_hDate1">
+        android:layout_toRightOf="@id/s_txt_student_to"
+        android:layout_alignBottom="@+id/etxt_sDate1">
         <requestFocus />
     </EditText>
     <ImageButton
-        android:id="@+id/ibtn_hDate2"
+        android:id="@+id/ibtn_sDate2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/etxt_hDate2"
+        android:layout_toRightOf="@id/etxt_sDate2"
         android:cropToPadding="true"
-        android:onClick="hSelectDate2"
-        android:layout_alignBottom="@+id/etxt_hDate1"/>
+        android:onClick="studentSelectDate2"
+        android:layout_alignBottom="@+id/etxt_sDate1"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_hDistance"
+        android:id="@+id/txt_sDistance"
         android:text="Distance To Davis"
         android:textSize="20dp"
         android:background="#33B5E5"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/etxt_hDate1"/>
+        android:layout_below="@+id/etxt_sDate1"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etxt_hDistance"
-        android:layout_below="@+id/txt_hDistance"
-        android:hint="Enter Distance from Campus"/>
+        android:id="@+id/etxt_sDistance"
+        android:layout_below="@+id/txt_sDistance"
+        android:hint="Enter Preferred Distance from Campus"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_hPetPref"
-        android:text="Pets"
+        android:id="@+id/txt_sPetPref"
+        android:text="Pet Peference"
         android:textSize="20dp"
-        android:layout_below="@+id/etxt_hDistance"
+        android:layout_below="@+id/etxt_sDistance"
         android:layout_marginTop="20dp"
         android:background="#33B5E5" />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cbox_hDog"
+        android:id="@+id/cbox_sDog"
         android:text="Dogs"
-        android:layout_below="@id/txt_hPetPref"
+        android:layout_below="@id/txt_sPetPref"
         />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cbox_hCat"
+        android:id="@+id/cbox_sCat"
         android:text="Cats"
-        android:layout_below="@+id/cbox_hDog"
+        android:layout_below="@+id/cbox_sDog"
         />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cbox_hNoPets"
+        android:id="@+id/cbox_sNoPref"
+        android:text="No Preference"
+        android:layout_below="@+id/cbox_sCat"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_sNoPets"
         android:text="No Pets"
-        android:layout_below="@+id/cbox_hCat"
+        android:layout_below="@+id/cbox_sNoPref"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_hSmoke"
+        android:id="@+id/txt_sSmoke"
         android:text="Smoking Preference"
         android:textSize="20dp"
-        android:layout_below="@id/cbox_hNoPets"
+        android:layout_below="@id/cbox_sNoPets"
         android:layout_marginTop="20dp"
         android:background="#33B5E5" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rg_hSmoke"
-        android:layout_below="@+id/txt_hSmoke">
+        android:id="@+id/rg_sSmoke"
+        android:layout_below="@+id/txt_sSmoke">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Yes"
-            android:id="@+id/rbtn_hSmokeYes"
+            android:id="@+id/rbtn_sSmokeYes"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No"
-            android:id="@+id/rbtn_hSmokeNo"
+            android:id="@+id/rbtn_sSmokeNo"
             android:checked="false" />
     </RadioGroup>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_hGenderPref"
-        android:text="Gender Preference"
+        android:id="@+id/txt_sAllergy"
+        android:text="Allergies"
         android:textSize="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/rg_hSmoke"
+        android:layout_below="@+id/rg_sSmoke"
         android:background="#33B5E5" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rg_hGenderPref"
-        android:layout_below="@+id/txt_hGenderPref">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            android:id="@+id/rbtn_hPrefMale"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            android:id="@+id/rbtn_hPrefFemale"
-            android:checked="false" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rbtn_hNoGenderPref"
-            android:text="None"/>
-
-    </RadioGroup>
+        android:id="@+id/etxt_sAllergy"
+        android:hint="ie. foods, animals"
+        android:layout_below="@+id/txt_sAllergy"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_hChildren"
-        android:layout_below="@+id/rg_hGenderPref"
+        android:id="@+id/txt_sChildren"
+        android:layout_below="@+id/etxt_sAllergy"
         android:text="Children"
         android:layout_marginTop="20dp"
         android:textSize="20dp"
@@ -295,29 +273,31 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rg_hChildren"
-        android:layout_below="@+id/txt_hChildren">
+        android:id="@+id/rg_sChildren"
+        android:layout_below="@+id/txt_sChildren">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Yes"
-            android:id="@+id/rbtn_hChildYes"
+            android:id="@+id/rbtn_sChildYes"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No"
-            android:id="@+id/rbtn_hChildNo"
+            android:id="@+id/rbtn_sChildNo"
             android:checked="false" />
     </RadioGroup>
+
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_hOtherInfo"
-        android:layout_below="@+id/rg_hChildren"
+        android:id="@+id/txt_sOtherInfo"
+        android:layout_below="@+id/rg_sChildren"
         android:text="Other Information"
         android:textSize="20dp"
         android:layout_marginTop="20dp"
@@ -326,8 +306,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etxt_hOtherInfo"
-        android:layout_below="@+id/txt_hOtherInfo"
+        android:id="@+id/etxt_sOtherInfo"
+        android:layout_below="@+id/txt_sOtherInfo"
         android:height="100dp"
         android:hint="tell us about yourself"
         />
@@ -335,17 +315,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_hSave"
+        android:id="@+id/btn_sSave"
         android:text="Save"
-        android:layout_below="@+id/etxt_hOtherInfo"
+        android:layout_below="@+id/etxt_sOtherInfo"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_hUndo"
+        android:id="@+id/btn_sUndo"
         android:text="Undo"
-        android:layout_below="@+id/btn_hSave"/>
+        android:layout_below="@+id/btn_sSave"/>
 
 </RelativeLayout>
 </ScrollView>

@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.app.Admin1Fragment">
+
+    <ImageView
+        android:layout_width="133dp"
+        android:layout_height="133dp"
+        android:id="@+id/img_adminPic"
+        android:src="@drawable/blank_profile_pic"
+        android:clickable="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_adminName"
+        android:layout_toRightOf="@+id/img_adminPic"
+        android:layout_alignBottom="@+id/img_adminPic"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Admin Name" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_adminPhone"
+        android:layout_below = "@+id/img_adminPic"
+        android:layout_alignLeft="@+id/img_adminPic"
+        android:hint="Enter Phone Number"
+        android:layout_alignRight="@+id/etxt_adminName"
+        android:layout_alignEnd="@+id/etxt_adminName" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_adminEmail"
+        android:text="myEmail@ucdavis.edu"
+        android:layout_below="@+id/etxt_adminPhone"
+        android:layout_alignRight="@+id/etxt_adminPhone"
+        android:layout_alignEnd="@+id/etxt_adminPhone" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_aSave"
+        android:text="Save"
+        android:layout_below="@+id/etxt_adminEmail"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_aUndo"
+        android:text="Undo"
+        android:layout_below="@+id/btn_aSave"/>
+
+</RelativeLayout>

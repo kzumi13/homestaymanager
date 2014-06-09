@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/host_preferences">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Availability Dates"
+            android:id="@+id/txt_dateHU"
+            android:textSize="20dp"
+            android:background="#33B5E5"
+            />
+
+
+        <EditText
+            android:id="@+id/etxt_date1HU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:inputType="date"
+            android:longClickable="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:editable="false"
+            android:layout_below="@id/txt_dateHU">
+            <requestFocus />
+    </EditText>
+    <ImageButton
+        android:id="@+id/ibtn_date1HU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/etxt_date1HU"
+        android:layout_toRightOf="@+id/etxt_date1HU"
+        android:cropToPadding="true"
+        android:onClick="selectDate2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to"
+        android:layout_toRightOf="@+id/ibtn_date1HU"
+        android:layout_alignBottom="@+id/etxt_date1HU"
+        android:paddingTop="27dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:id="@+id/txt_student_to"/>
+
+    <EditText
+        android:id="@+id/etxt_date2HU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:longClickable="false"
+        android:focusable="false"
+        android:editable="false"
+        android:clickable="false"
+        android:ems="5"
+        android:inputType="date"
+        android:layout_toRightOf="@id/txt_student_to"
+        android:layout_alignBottom="@+id/etxt_date1HU">
+        <requestFocus />
+    </EditText>
+    <ImageButton
+        android:id="@+id/ibtn_date2HU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/etxt_date2HU"
+        android:cropToPadding="true"
+        android:onClick="selectDate3"
+        android:layout_alignBottom="@+id/etxt_date1HU"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_distanceHU"
+        android:text="Distance To Davis"
+        android:textSize="20dp"
+        android:background="#33B5E5"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/etxt_date1HU"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_distanceHU"
+        android:layout_below="@+id/txt_distanceHU"
+        android:hint="Enter Distance from Campus"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_petPrefHU"
+        android:text="Pets"
+        android:textSize="20dp"
+        android:layout_below="@+id/etxt_distanceHU"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_dogHU"
+        android:text="Dogs"
+        android:layout_below="@id/txt_petPrefHU"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_catHU"
+        android:text="Cats"
+        android:layout_below="@+id/cbox_dogHU"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_noPetsHU"
+        android:text="No Pets"
+        android:layout_below="@+id/cbox_catHU"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_smokeHU"
+        android:text="Smoking Preference"
+        android:textSize="20dp"
+        android:layout_below="@id/cbox_noPetsHU"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_smokeHU"
+        android:layout_below="@+id/txt_smokeHU">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:id="@+id/rbtn_smokeYesHU"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:id="@+id/rbtnsmokeNoHU"
+            android:checked="false" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_genderPrefHU"
+        android:text="Gender Preference"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/rg_smokeHU"
+        android:background="#33B5E5" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_genderPrefHU"
+        android:layout_below="@+id/txt_genderPrefHU">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:id="@+id/rbtn_prefMaleHU"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/rbtn_prefFemaleHU"
+            android:checked="false" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbtn_noGenderPrefHU"
+            android:text="None"/>
+
+        </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_childrenHU"
+        android:layout_below="@+id/rg_genderPrefHU"
+        android:text="Children"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:background="#33B5E5"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_childrenHU"
+        android:layout_below="@+id/txt_childrenHU">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:id="@+id/rbtn_childYesHU"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:id="@+id/rbtn_childNoHU"
+            android:checked="false" />
+    </RadioGroup>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_otherInfoHU"
+        android:layout_below="@+id/rg_childrenHU"
+        android:text="Other Information"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#33B5E5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_otherInfoHU"
+        android:layout_below="@+id/txt_otherInfoHU"
+        android:height="100dp"
+        android:hint="tell us about yourself"
+        />
+
+</RelativeLayout>

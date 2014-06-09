@@ -26,6 +26,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 
 import java.util.Calendar;
+import java.util.List;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -87,6 +88,36 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         setContentView(R.layout.activity_student);
 
         //TODO FIND EVERY MOTHERFUCKER BY ITS GODDAMMED ID!!!!!
+        profilePicIv = (ImageView) findViewById(R.id.img_sProfile);
+        nameEtxt = (EditText) findViewById(R.id.etxt_sName);;
+        phoneNumberEtxt = (EditText) findViewById(R.id.etxt_sPhone);;
+        emailEtxt = (EditText) findViewById(R.id.etxt_sEmail);
+        addressEtxt = (EditText) findViewById(R.id.etxt_sAddress);
+        date1Etxt = (EditText) findViewById(R.id.etxt_sDate1);
+        date2Etxt = (EditText) findViewById(R.id.etxt_sDate2);
+        distanceEtxt = (EditText) findViewById(R.id.etxt_sDistance);
+        dogCbox  = (CheckBox) findViewById(R.id.cbox_sDog);
+        catCbox  = (CheckBox) findViewById(R.id.cbox_sCat);
+        noPreferenceCbox  = (CheckBox) findViewById(R.id.cbox_sNoPref);
+        noPetsCbox  = (CheckBox) findViewById(R.id.cbox_sNoPets);
+        smokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_sSmokeYes);
+        smokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_sSmokeNo);
+        childYesRbtn = (RadioButton) findViewById(R.id.rbtn_sChildYes);
+        childNoRbtn = (RadioButton) findViewById(R.id.rbtn_sChildNo);
+        otherInfoEtxt  = (EditText) findViewById(R.id.etxt_sOtherInfo);
+        saveBtn = (Button) findViewById(R.id.btn_sSave);
+        undoBtn = (Button) findViewById(R.id.btn_sUndo);
+
+        //Begin fragment 2 declarations
+        myMatchesLv = (ListView)findViewById(R.id.lv_hMatches);
+
+        //Begin Fragment3 Delcaration
+        /*
+        private EditText hostSearchEtxt;
+        private ListView hostSearchLv;
+        private Button filterBtn;
+        private Button makeMatchesBtn;
+        */
 
         //View Pager stuff
         viewPager = (ViewPager) findViewById(R.id.studentPager);
@@ -123,18 +154,18 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         tab2.setTabListener(this);
 
         ActionBar.Tab tab3= actionBar.newTab();
-        tab3.setText("Placement Wizard");
+        tab3.setText("Host Search");
         tab3.setTabListener(this);
 
-        //ActionBar.Tab tab4 = actionBar.newTab();
-        //tab4.setText("Manual Selection");
-        //tab4.setTabListener(this);
+        ActionBar.Tab tab4 = actionBar.newTab();
+        tab4.setText("Placement Wizard");
+        tab4.setTabListener(this);
 
         //Add the tabs
         actionBar.addTab(tab1);
         actionBar.addTab(tab2);
         actionBar.addTab(tab3);
-        //actionBar.addTab(tab4);
+        actionBar.addTab(tab4);
     }
 
 
@@ -228,7 +259,7 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
 //Make pager adapter class
 class StudentAdapter extends FragmentStatePagerAdapter
 {
-    private static final int NUMTABS = 3; //Number of tabes in our student activity
+    private static final int NUMTABS = 4; //Number of tabes in our student activity
 
     public StudentAdapter(FragmentManager fm) {
         super(fm);
@@ -248,9 +279,9 @@ class StudentAdapter extends FragmentStatePagerAdapter
         else if(position == 2){
             fragment = new Student3Fragment();
         }
-        //else if(position == 3){
-        //    fragment = new Student4Fragment();
-        //}
+        else if(position == 3){
+            fragment = new Student4Fragment();
+        }
         //for extra fragment if needed
         //else if(position == 2){
         //    fragment = new Student3Fragment();

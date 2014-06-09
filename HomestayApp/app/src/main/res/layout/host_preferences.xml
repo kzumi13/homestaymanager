@@ -236,7 +236,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etxt_otherInfoSU"
+        android:id="@+id/etxt_otherInfoHU"
         android:layout_below="@+id/txt_otherInfoHU"
         android:height="100dp"
         android:hint="tell us about yourself"

@@ -49,7 +49,6 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
     private EditText date1Etxt;
     private EditText date2Etxt;
     private EditText distanceEtxt;
-
     private CheckBox dogCbox;
     private CheckBox catCbox;
     private CheckBox noPetsCbox;

@@ -51,41 +51,31 @@ public class SignUpActivity extends ActionBarActivity {
     //Begin student declarations----------------------------------!
     EditText student_date1;
     EditText student_date2;
-
     private EditText sdistanceEtxt;
-
     private CheckBox sdogCbox;
     private CheckBox scatCbox;
     private CheckBox snoPreferenceCbox;
     private CheckBox snoPetsCbox;
-
     private RadioButton ssmokeYesRBtn;
     private RadioButton ssmokeNoRbtn;
-
     private  RadioButton schildYesRbtn;
     private RadioButton schildNoRbtn;
-
     private EditText sotherInfoEtxt;
 
     //Begin host delcarations---------------------------------!
     EditText host_date1;
     EditText host_date2;
     private EditText hdistanceEtxt;
-
     private CheckBox hdogCbox;
     private CheckBox hcatCbox;
     private CheckBox hnoPetsCbox;
-
     private RadioButton hsmokeYesRBtn;
     private RadioButton hsmokeNoRbtn;
-
-    private RadioButton hgpYesRbtn;
-    private RadioButton hgpNoRbtn;
+    private RadioButton hgpMaleRbtn;
+    private RadioButton hgpFemaleRbtn;
     private RadioButton hgpNoneRbtn;
-
     private RadioButton hchildYesRbtn;
     private RadioButton hchildNoRbtn;
-
     private EditText hotherInfoEtxt;
 
 
@@ -106,6 +96,8 @@ public class SignUpActivity extends ActionBarActivity {
         genderFRbtn = (RadioButton) findViewById(R.id.rbtn_female);
 
         //Student declarations
+        student_date1 = (EditText)findViewById(R.id.etxt_date1SU);
+        student_date2 = (EditText)findViewById(R.id.etxt_date2SU);
         sdistanceEtxt = (EditText) findViewById(R.id.etxt_distanceSU);
         sdogCbox = (CheckBox) findViewById(R.id.cbox_dogSU);
         scatCbox = (CheckBox) findViewById(R.id.cbox_catSU);
@@ -116,6 +108,24 @@ public class SignUpActivity extends ActionBarActivity {
         schildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesSU);
         schildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoSU);
         sotherInfoEtxt = (EditText) findViewById(R.id.etxt_otherInfoSU);
+
+        //Host declarations
+        host_date1 = (EditText) findViewById(R.id.etxt_date1HU);
+        host_date2 = (EditText)findViewById(R.id.etxt_date2HU);
+        hdistanceEtxt = (EditText) findViewById(R.id.etxt_distanceHU);
+        hdogCbox = (CheckBox) findViewById(R.id.cbox_dogHU);
+        hcatCbox = (CheckBox) findViewById(R.id.cbox_catHU);
+        hnoPetsCbox = (CheckBox) findViewById(R.id.cbox_catHU);
+        hsmokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_smokeYesHU);
+        hsmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_smokeNoSU);
+        hgpMaleRbtn = (RadioButton) findViewById(R.id.rbtn_prefMaleHU);
+        hgpFemaleRbtn = (RadioButton) findViewById(R.id.rbtn_prefFemaleHU);
+        hgpNoneRbtn = (RadioButton) findViewById(R.id.rbtn_noGenderPrefHU);
+        hchildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesHU);
+        hchildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoHU);
+        hotherInfoEtxt = (EditText) findViewById(R.id.etxt_otherInfoHU);
+
+
 
         //set on click listener for Image
         // begin imgView stuff -------------------------------------------------------------------------------------------------------

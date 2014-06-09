@@ -989,7 +989,7 @@ containing a value of this type.
         public static final int dropdown=0x7f070013;
         public static final int edit_query=0x7f070030;
         public static final int end=0x7f07000c;
-        public static final int etet_address=0x7f07004c;
+        public static final int etxt_address=0x7f07004c;
         public static final int etxt_adminEmail=0x7f07005a;
         public static final int etxt_adminName=0x7f070058;
         public static final int etxt_adminPhone=0x7f070059;

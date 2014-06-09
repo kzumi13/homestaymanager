@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/etet_address"
+        android:id="@+id/etxt_address"
         android:hint="Enter Mailing Address" />
 
     <EditText

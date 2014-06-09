@@ -174,55 +174,6 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         actionBar.addTab(tab2);
         actionBar.addTab(tab3);
         actionBar.addTab(tab4);
-
-        //On Fragment1Student stuff from firebase ---------------------------------------------------------------------------------------
-        /*
-        Firebase userRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + SignUpActivity.userName);
-        userRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-
-                Object value = snapshot.getValue();
-                if (value == null) {
-                    System.out.println("User julie doesn't exist");
-                } else {
-                    //Fill in the widgets with the student information
-                    //profilePicIv = (ImageView) findViewById(R.id.img_sProfile);
-                    nameEtxt.setText((String)((Map)value).get("name"));
-                    phoneNumberEtxt.setText((String)((Map)value).get("phone"));
-                    emailEtxt.setText((String)((Map)value).get("email"));
-                    addressEtxt.setText((String)((Map)value).get("address"));
-                    date1Etxt.setText((String)((Map)value).get("date1"));
-                    date2Etxt.setText((String)((Map)value).get("date2"));
-                    distanceEtxt.setText((String)((Map)value).get("distance"));
-                    dogCbox  = (CheckBox) findViewById(R.id.cbox_sDog);
-                    if(((Map)value).get("dog").equals("yes"))
-                        dogCbox.setChecked(true);
-                    if(((Map)value).get("cat").equals("yes"))
-                        catCbox.setChecked(true);
-                    if(((Map)value).get("dog").equals("idc") && ((Map)value).get("cat").equals("idc"))
-                        noPreferenceCbox.setChecked(true);
-                    if(((String)((Map)value).get("dog")).equals("n") && ((String)((Map)value).get("cat")).equals("n"))
-                        noPetsCbox.setChecked(true);
-                    if(((Map)value).get("smoke").equals("y"))
-                        smokeNoRbtn.setChecked(true);
-                    else
-                        smokeNoRbtn.setChecked(true);
-                    if(((Map)value).get("child").equals("y"))
-                        childYesRbtn.setChecked(true);
-                    else
-                        childNoRbtn.setChecked(true);
-                    otherInfoEtxt.setText((String)((Map)value).get("info"));
-                }
-            }
-
-
-            @Override
-            public void onCancelled(FirebaseError error) {
-                System.err.println("Listener was cancelled");
-            }
-        });
-        */
     }
 
     @Override

@@ -49,6 +49,8 @@ public class SignUpActivity extends ActionBarActivity {
     private EditText nameEtxt;
     private EditText emailEtxt;
     private EditText passwordEtxt;
+    private EditText addressEtxt;
+    private EditText phoneEtxt;
     private RadioButton genderMRbtn;
     private RadioButton genderFRbtn;
     private Button finishBtn;
@@ -63,6 +65,7 @@ public class SignUpActivity extends ActionBarActivity {
     private CheckBox snoPetsCbox;
     private RadioButton ssmokeYesRBtn;
     private RadioButton ssmokeNoRbtn;
+    private EditText allergyEtxt;
     private  RadioButton schildYesRbtn;
     private RadioButton schildNoRbtn;
     private EditText sotherInfoEtxt;
@@ -96,6 +99,8 @@ public class SignUpActivity extends ActionBarActivity {
         nameEtxt = (EditText) findViewById(R.id.etxt_name);
         emailEtxt = (EditText) findViewById(R.id.etxt_signUpEmail);
         passwordEtxt = (EditText) findViewById(R.id.etxt_password);
+        addressEtxt = (EditText) findViewById(R.id.etxt_address);
+        phoneEtxt = (EditText) findViewById(R.id.etxt_phoneNum);
         genderMRbtn = (RadioButton) findViewById(R.id.rbtn_male);
         genderFRbtn = (RadioButton) findViewById(R.id.rbtn_female);
 
@@ -141,6 +146,8 @@ public class SignUpActivity extends ActionBarActivity {
                 userRef.child("name").setValue(nameEtxt.getText().toString());
                 userRef.child("email").setValue(emailEtxt.getText().toString());
                 userRef.child("password").setValue(passwordEtxt.getText().toString());
+                userRef.child("address").setValue(addressEtxt.getText().toString());
+                userRef.child("phone").setValue(phoneEtxt.getText().toString());
                 if(genderMRbtn.isChecked())
                     userRef.child("gender").setValue("m");
                 else if(genderFRbtn.isChecked())
@@ -342,6 +349,7 @@ public class SignUpActivity extends ActionBarActivity {
                         snoPreferenceCbox = (CheckBox) findViewById(R.id.cbox_catSU);
                         snoPetsCbox = (CheckBox) findViewById(R.id.cbox_catSU);
                         ssmokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_smokeYesSU);
+                        allergyEtxt = (EditText) findViewById(R.id.etxt_sAllergy);
                         ssmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_smokeNoSU);
                         schildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesSU);
                         schildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoSU);

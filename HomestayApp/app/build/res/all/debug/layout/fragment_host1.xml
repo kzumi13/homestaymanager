@@ -214,13 +214,21 @@
         android:layout_below="@+id/cbox_hCat"
         />
 
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_hNoPref"
+        android:text="No Preference"
+        android:layout_below="@+id/cbox_hNoPets"
+        />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_hSmoke"
         android:text="Smoking Preference"
         android:textSize="20dp"
-        android:layout_below="@id/cbox_hNoPets"
+        android:layout_below="@id/cbox_hNoPref"
         android:layout_marginTop="20dp"
         android:background="#33B5E5" />
 

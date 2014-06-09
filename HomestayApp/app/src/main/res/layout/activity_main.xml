@@ -11,6 +11,7 @@
         android:text="Sign In"
         android:id="@+id/textView3"
         android:textSize="40dp"
+        android:textStyle=
         android:background="#33B5E5" />
 
     <ImageView
@@ -27,7 +28,7 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/etxt_userLogin"
-        android:hint="Enter Email Address"
+        android:hint="Enter Username"
         android:layout_below="@+id/txt_gender"
         android:layout_alignRight="@+id/btn_login"
         android:layout_alignEnd="@+id/btn_login"

@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etxt_emailLogin"
+        android:id="@+id/etxt_userLogin"
         android:hint="Enter Email Address"
         android:layout_below="@+id/txt_gender"
         android:layout_alignRight="@+id/btn_login"
@@ -39,10 +39,10 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/etxt_pwLogin"
-        android:layout_alignLeft="@+id/etxt_emailLogin"
-        android:layout_alignStart="@+id/etxt_emailLogin"
+        android:id="@+id/etxt_passLogin"
+        android:layout_below="@+id/etxt_userLogin"
+        android:layout_alignLeft="@+id/etxt_userLogin"
+        android:layout_alignStart="@+id/etxt_userLogin"
         android:hint="Enter Password"
         android:textSize="20dp" />
 

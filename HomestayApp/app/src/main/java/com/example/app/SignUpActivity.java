@@ -136,6 +136,8 @@ public class SignUpActivity extends ActionBarActivity {
 
                 userName = userNameEtxt.getText().toString();
 
+                MainActivity.userName = userName;  //used for login purposes
+
                 userRef.child("name").setValue(nameEtxt.getText().toString());
                 userRef.child("email").setValue(emailEtxt.getText().toString());
                 userRef.child("password").setValue(passwordEtxt.getText().toString());

@@ -987,7 +987,6 @@ containing a value of this type.
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070008;
         public static final int dropdown=0x7f070013;
-        public static final int editText4=0x7f070043;
         public static final int edit_query=0x7f070030;
         public static final int end=0x7f07000c;
         public static final int etet_address=0x7f07004c;
@@ -1001,7 +1000,6 @@ containing a value of this type.
         public static final int etxt_date2SU=0x7f0700e8;
         public static final int etxt_distanceHU=0x7f0700d0;
         public static final int etxt_distanceSU=0x7f0700eb;
-        public static final int etxt_emailLogin=0x7f070040;
         public static final int etxt_hAddress=0x7f070067;
         public static final int etxt_hDate1=0x7f070069;
         public static final int etxt_hDate2=0x7f07006c;
@@ -1014,6 +1012,7 @@ containing a value of this type.
         public static final int etxt_name=0x7f07004a;
         public static final int etxt_otherInfoHU=0x7f0700e3;
         public static final int etxt_otherInfoSU=0x7f0700fc;
+        public static final int etxt_passLogin=0x7f070043;
         public static final int etxt_password=0x7f07004d;
         public static final int etxt_pwLogin=0x7f070044;
         public static final int etxt_sAddress=0x7f07008f;
@@ -1030,6 +1029,7 @@ containing a value of this type.
         public static final int etxt_swDate1=0x7f0700b1;
         public static final int etxt_swDate2=0x7f0700b4;
         public static final int etxt_swDistance=0x7f0700b7;
+        public static final int etxt_userLogin=0x7f070040;
         public static final int etxt_userName=0x7f070049;
         public static final int expand_activities_button=0x7f070026;
         public static final int expanded_menu=0x7f07002c;

@@ -91,7 +91,9 @@
         android:ems="10"
         android:id="@+id/etxt_hAddress"
         android:hint="Enter Mailing Address"
-        android:layout_below="@+id/etxt_hEmail"/>
+        android:layout_below="@+id/etxt_hEmail"
+        android:layout_alignRight="@+id/etxt_hPhone"
+        android:layout_alignEnd="@+id/etxt_hPhone" />
 
 
     <TextView

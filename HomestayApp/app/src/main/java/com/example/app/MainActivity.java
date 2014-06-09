@@ -24,14 +24,16 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
-
+import java.util.Map;
 
 public class MainActivity extends ActionBarActivity {
+
+    public static String userName;
 
     Fragment    fragment;
     Button      signUpBtn,
                 loginBtn;
-    EditText    eLoginEtxt;
+    EditText    eLoginEtxt, ePassEtxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
 
         //FIREBASE!------------------------------------------------------------------------------------
         // Create a reference to a Firebase location
-        //Firebase ref = new Firebase("https://popping-fire-8794.firebaseio.com/users");
+        Firebase ref = new Firebase("https://popping-fire-8794.firebaseio.com/users");
 
         // Write data to Firebase
         //ref.setValue("we dont love firebase");
@@ -70,10 +72,52 @@ public class MainActivity extends ActionBarActivity {
         }*/
 
         loginBtn = (Button) findViewById(R.id.btn_login);
-        eLoginEtxt = (EditText) findViewById(R.id.etxt_emailLogin);
+        eLoginEtxt = (EditText) findViewById(R.id.etxt_userLogin);
+        ePassEtxt = (EditText) findViewById(R.id.etxt_passLogin);
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                final String usernameValue = eLoginEtxt.getText().toString();
+
+                userName = eLoginEtxt.getText().toString();
+
+                Firebase passwordRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + usernameValue);
+                passwordRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        Object value = snapshot.getValue();
+                        if (value == null) {
+                            System.out.println("User doesn't exist |" + usernameValue + "|");
+                        } else {
+                            String passwordValue = ePassEtxt.getText().toString();
+                            String passwordServer = (String) ((Map) value).get("password");
+                            System.out.println("User julie's full name is: " + passwordValue + " " + passwordServer);
+                            if(passwordValue.equals(passwordServer)){
+                                String profileT = (String)((Map)value).get("profileType");
+                                if(profileT.equals("host")){
+                                    Intent intent = new Intent(MainActivity.this, HostActivity.class);
+                                    startActivity(intent);
+                                }
+                                if(profileT.equals("student")){
+                                    Intent intent = new Intent(MainActivity.this, StudentActivity.class);
+                                    startActivity(intent);
+                                }
+                                if(profileT.equals("admin")){
+                                    Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError error) {
+                        System.err.println("Listener was cancelled");
+                    }
+                });
+
                 /*
                 //Toast.makeText(getApplicationContext(), eLoginEtxt.getText(), Toast.LENGTH_SHORT).show();
                 //TODO: Impliment a way to determine which profile to open up
@@ -96,8 +140,7 @@ public class MainActivity extends ActionBarActivity {
                     startActivity(intent);
                 }
                 */
-                Intent intent = new Intent(MainActivity.this, HostActivity.class);
-                startActivity(intent);
+
             }
         });
 

@@ -104,26 +104,6 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         setContentView(R.layout.activity_student);
 
         //TODO FIND EVERY MOTHERFUCKER BY ITS GODDAMMED ID!!!!!
-        profilePicIv = (ImageView) findViewById(R.id.img_sProfile);
-        nameEtxt = (EditText) findViewById(R.id.etxt_sName);;
-        phoneNumberEtxt = (EditText) findViewById(R.id.etxt_sPhone);;
-        emailEtxt = (EditText) findViewById(R.id.etxt_sEmail);
-        addressEtxt = (EditText) findViewById(R.id.etxt_sAddress);
-        date1Etxt = (EditText) findViewById(R.id.etxt_sDate1);
-        date2Etxt = (EditText) findViewById(R.id.etxt_sDate2);
-        distanceEtxt = (EditText) findViewById(R.id.etxt_sDistance);
-        dogCbox  = (CheckBox) findViewById(R.id.cbox_sDog);
-        catCbox  = (CheckBox) findViewById(R.id.cbox_sCat);
-        noPreferenceCbox  = (CheckBox) findViewById(R.id.cbox_sNoPref);
-        noPetsCbox  = (CheckBox) findViewById(R.id.cbox_sNoPets);
-        smokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_sSmokeYes);
-        smokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_sSmokeNo);
-        childYesRbtn = (RadioButton) findViewById(R.id.rbtn_sChildYes);
-        childNoRbtn = (RadioButton) findViewById(R.id.rbtn_sChildNo);
-        otherInfoEtxt  = (EditText) findViewById(R.id.etxt_sOtherInfo);
-        saveBtn = (Button) findViewById(R.id.btn_sSave);
-        undoBtn = (Button) findViewById(R.id.btn_sUndo);
-
         //Begin fragment 2 declarations
         myMatchesLv = (ListView)findViewById(R.id.lv_hMatches);
 
@@ -196,7 +176,7 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         actionBar.addTab(tab4);
 
         //On Fragment1Student stuff from firebase ---------------------------------------------------------------------------------------
-
+        /*
         Firebase userRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + SignUpActivity.userName);
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -242,6 +222,7 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
                 System.err.println("Listener was cancelled");
             }
         });
+        */
     }
 
     @Override

@@ -292,7 +292,6 @@ int id default_activity_button 0x7f070028
 int id dialog 0x7f070012
 int id disableHome 0x7f070008
 int id dropdown 0x7f070013
-int id editText4 0x7f070043
 int id edit_query 0x7f070030
 int id end 0x7f07000c
 int id etet_address 0x7f07004c
@@ -306,7 +305,6 @@ int id etxt_date2HU 0x7f0700cd
 int id etxt_date2SU 0x7f0700e8
 int id etxt_distanceHU 0x7f0700d0
 int id etxt_distanceSU 0x7f0700eb
-int id etxt_emailLogin 0x7f070040
 int id etxt_hAddress 0x7f070067
 int id etxt_hDate1 0x7f070069
 int id etxt_hDate2 0x7f07006c
@@ -319,6 +317,7 @@ int id etxt_hStudentSearch 0x7f070087
 int id etxt_name 0x7f07004a
 int id etxt_otherInfoHU 0x7f0700e3
 int id etxt_otherInfoSU 0x7f0700fc
+int id etxt_passLogin 0x7f070043
 int id etxt_password 0x7f07004d
 int id etxt_pwLogin 0x7f070044
 int id etxt_sAddress 0x7f07008f
@@ -335,6 +334,7 @@ int id etxt_signUpEmail 0x7f07004b
 int id etxt_swDate1 0x7f0700b1
 int id etxt_swDate2 0x7f0700b4
 int id etxt_swDistance 0x7f0700b7
+int id etxt_userLogin 0x7f070040
 int id etxt_userName 0x7f070049
 int id expand_activities_button 0x7f070026
 int id expanded_menu 0x7f07002c

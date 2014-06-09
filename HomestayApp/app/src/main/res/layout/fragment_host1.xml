@@ -74,6 +74,16 @@
         android:layout_alignStart="@+id/cbox_hHide2"
         android:checked="false" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide"
+        android:id="@+id/cbox_hHide3"
+        android:checked="false"
+        android:layout_below="@+id/etxt_hEmail"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -252,14 +262,14 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes"
+            android:text="Male"
             android:id="@+id/rbtn_hPrefMale"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No"
+            android:text="Female"
             android:id="@+id/rbtn_hPrefFemale"
             android:checked="false" />
         <RadioButton

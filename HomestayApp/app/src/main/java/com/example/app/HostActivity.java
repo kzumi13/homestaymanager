@@ -50,15 +50,19 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
     private EditText date2Etxt;
     private EditText distanceEtxt;
 
+    private CheckBox hide1Cbox;
+    private CheckBox hide2Cbox;
+    private CheckBox hide3Cbox;
+
     private CheckBox dogCbox;
     private CheckBox catCbox;
     private CheckBox noPetsCbox;
 
-    private RadioButton smokeYesRBtn;
+    private RadioButton smokeYesRbtn;
     private RadioButton smokeNoRbtn;
 
-    private RadioButton gpYesRbtn;
-    private RadioButton gpNoRbtn;
+    private RadioButton gpMaleRbtn;
+    private RadioButton gpFemaleRbtn;
     private RadioButton gpNoneRbtn;
 
     private RadioButton childYesRbtn;
@@ -82,6 +86,42 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
         setContentView(R.layout.activity_host);
 
         //TODO FIND EVERY MOTHERFUCKER BY ITS GODDAMMED ID!!!!!
+        profilePicIv = (ImageView) findViewById(R.id.img_hProfile);
+        nameEtxt = (EditText) findViewById(R.id.etxt_hName);
+        phoneNumberEtxt = (EditText) findViewById(R.id.etxt_hPhone);
+        emailEtxt = (EditText) findViewById(R.id.etxt_hEmail);
+        addressEtxt = (EditText) findViewById(R.id.etxt_hAddress);
+        distanceEtxt = (EditText) findViewById(R.id.etxt_hDistance);
+
+        hide1Cbox = (CheckBox) findViewById(R.id.cbox_hHide1);
+        hide2Cbox = (CheckBox) findViewById(R.id.cbox_hHide2);
+        hide3Cbox = (CheckBox) findViewById(R.id.cbox_hHide3);
+
+        dogCbox = (CheckBox) findViewById(R.id.cbox_hDog);
+        catCbox = (CheckBox) findViewById(R.id.cbox_hCat);
+        noPetsCbox = (CheckBox) findViewById(R.id.cbox_hNoPets);
+
+        smokeYesRbtn = (RadioButton) findViewById(R.id.rbtn_hSmokeYes);
+        smokeNoRbtn =  (RadioButton) findViewById(R.id.rbtn_hSmokeNo);
+
+        gpMaleRbtn  = (RadioButton) findViewById(R.id.rbtn_hPrefMale);
+        gpFemaleRbtn = (RadioButton) findViewById(R.id.rbtn_hPrefFemale);
+        gpNoneRbtn = (RadioButton) findViewById(R.id.rbtn_hNoGenderPref);
+
+        childYesRbtn = (RadioButton) findViewById(R.id.rbtn_hChildYes);
+        childNoRbtn = (RadioButton) findViewById(R.id.rbtn_hChildNo);
+
+        otherInfoEtxt = (EditText) findViewById(R.id.etxt_hOtherInfo);
+        saveBtn = (Button) findViewById(R.id.btn_hSave);
+        undoBtn = (Button) findViewById(R.id.btn_hUndo);
+
+        //Begin Fragment2 Declaration
+        matchesLv = (ListView) findViewById(R.id.lv_hMatches);
+
+        //Begin Fragment3 Declaration
+        studentSearchEtxt = (EditText) findViewById(R.id.etxt_hStudentSearch);
+        studentSearchLv = (ListView) findViewById(R.id.lv_hStudentSearch);
+
 
         //BEGIN View Pager stuff --------------------------------------------------------------------------------------------------------------
         viewPager = (ViewPager) findViewById(R.id.hostPager);

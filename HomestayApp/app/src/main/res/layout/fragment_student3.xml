@@ -25,9 +25,191 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="511dp"
+        android:layout_height="300dp"
         android:id="@+id/lv_sHosts"
         android:layout_gravity="center_horizontal" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Arrival and Departure Dates"
+            android:id="@+id/txt_swDate"
+            android:textSize="20dp"
+            android:background="#33B5E5"
+            />
+
+
+        <EditText
+            android:id="@+id/etxt_swDate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:inputType="date"
+            android:longClickable="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:editable="false"
+            android:layout_below="@id/txt_swDate">
+            <requestFocus />
+        </EditText>
+        <ImageButton
+            android:id="@+id/ibtn_swDate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/etxt_swDate1"
+            android:layout_toRightOf="@+id/etxt_swDate1"
+            android:cropToPadding="true"
+            android:onClick="filterSelectDate1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to"
+            android:layout_toRightOf="@+id/ibtn_swDate1"
+            android:layout_alignBottom="@+id/etxt_swDate1"
+            android:paddingTop="27dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:id="@+id/sw_txt_student_to"/>
+
+        <EditText
+            android:id="@+id/etxt_swDate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:longClickable="false"
+            android:focusable="false"
+            android:editable="false"
+            android:clickable="false"
+            android:ems="5"
+            android:inputType="date"
+            android:layout_toRightOf="@id/sw_txt_student_to"
+            android:layout_alignBottom="@+id/etxt_swDate1">
+            <requestFocus />
+        </EditText>
+        <ImageButton
+            android:id="@+id/ibtn_swDate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/etxt_swDate2"
+            android:cropToPadding="true"
+            android:onClick="filterSelectDate2"
+            android:layout_alignBottom="@+id/etxt_swDate1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_swDistance"
+            android:text="Distance To Davis"
+            android:background="#33B5E5"
+            android:textSize="20dp"
+            android:layout_below="@+id/etxt_swDate1"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etxt_swDistance"
+            android:layout_below="@+id/txt_swDistance"
+            android:hint="Enter Preferred Distance from Campus"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_swPetPref"
+            android:text="Pet Peference"
+            android:textSize="20dp"
+            android:layout_below="@+id/etxt_swDistance"
+            android:background="#33B5E5" />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbox_swDog"
+            android:text="Dogs"
+            android:layout_below="@id/txt_swPetPref"
+            />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbox_swCat"
+            android:text="Cats"
+            android:layout_below="@+id/cbox_swDog"
+            />
+
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbox_swNoPets"
+            android:text="No Pets"
+            android:layout_below="@+id/cbox_swCat"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_swSmoke"
+            android:text="Smoking Preference"
+            android:textSize="20dp"
+            android:layout_below="@id/cbox_swNoPets"
+            android:background="#33B5E5" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_swSmoke"
+            android:layout_below="@+id/txt_swSmoke">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:id="@+id/rbtn_swSmokeYes"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:id="@+id/rbtn_swSmokeNo"
+                android:checked="false" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_swChildren"
+            android:layout_below="@+id/rg_swSmoke"
+            android:text="Children"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:background="#33B5E5"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_swChildren"
+            android:layout_below="@+id/txt_swChildren">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:id="@+id/rbtn_swChildYes"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:id="@+id/rbtn_swChildNo"
+                android:checked="false" />
+        </RadioGroup>
+    </RelativeLayout>
 
     <Button
         android:layout_width="match_parent"

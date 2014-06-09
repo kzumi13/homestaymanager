@@ -38,6 +38,8 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
     //date picker delcaration
     boolean clicked_date1 = false;
     boolean clicked_date2 = false;
+    boolean clicked_date3 = false;
+    boolean clicked_date4 = false;
 
     //Begin Fragment1 Declaration
     private ImageView profilePicIv;
@@ -45,29 +47,22 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
     private EditText phoneNumberEtxt;
     private EditText emailEtxt;
     private EditText addressEtxt;
-
     private EditText date1Etxt;
     private EditText date2Etxt;
     private Button date1Btn;
     private Button date2Btn;
-
     private EditText distanceEtxt;
-
     private CheckBox dogCbox;
     private CheckBox catCbox;
     private CheckBox noPreferenceCbox;
     private CheckBox noPetsCbox;
-
     private RadioButton smokeYesRBtn;
     private RadioButton smokeNoRbtn;
-
     private RadioButton gpYesRbtn;
     private RadioButton gpNoRbtn;
     private RadioButton gpNoneRbtn;
-
     private  RadioButton childYesRbtn;
     private RadioButton childNoRbtn;
-
     private EditText otherInfoEtxt;
     private Button saveBtn;
     private Button undoBtn;
@@ -78,8 +73,22 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
     //Begin Fragment3 Delcaration
     private EditText hostSearchEtxt;
     private ListView hostSearchLv;
+    private EditText fDate1Etxt;
+    private EditText fDate2Etxt;
+    private EditText fDistanceEtxt;
+    private CheckBox fDogCbox;
+    private CheckBox fCatCbox;
+    private CheckBox fNoPetsCbox;
+    private RadioButton fsmokeYesRbtn;
+    private RadioButton fsmokeNoRbtn;
+    private RadioButton fChildYesRbtn;
+    private RadioButton fChildNoRbtn;
     private Button filterBtn;
-    private Button makeMatchesBtn;
+    private Button makeMatchBtn;
+
+    //Begin Fragment4 Declatation
+    private ListView pWizardLv;
+    private Button generateBtn;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -112,12 +121,24 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         myMatchesLv = (ListView)findViewById(R.id.lv_hMatches);
 
         //Begin Fragment3 Delcaration
-        /*
-        private EditText hostSearchEtxt;
-        private ListView hostSearchLv;
-        private Button filterBtn;
-        private Button makeMatchesBtn;
-        */
+        hostSearchEtxt = (EditText) findViewById(R.id.etxt_sHostSearch);
+        hostSearchLv = (ListView) findViewById(R.id.lv_sHosts);
+        fDate1Etxt = (EditText) findViewById(R.id.etxt_swDate1);
+        fDate2Etxt = (EditText) findViewById(R.id.etxt_swDate2);
+        fDistanceEtxt = (EditText) findViewById(R.id.etxt_swDistance);
+        fDogCbox = (CheckBox) findViewById(R.id.cbox_swDog);
+        fCatCbox = (CheckBox) findViewById(R.id.cbox_swCat);
+        fNoPetsCbox = (CheckBox) findViewById(R.id.cbox_swNoPets);
+        fsmokeYesRbtn = (RadioButton) findViewById(R.id.rbtn_swSmokeYes);
+        fsmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_swSmokeNo);
+        fChildYesRbtn = (RadioButton) findViewById(R.id.rbtn_swChildYes);
+        fChildNoRbtn = (RadioButton) findViewById(R.id.rbtn_swChildNo);
+        filterBtn = (Button) findViewById(R.id.btn_filter);
+        makeMatchBtn = (Button) findViewById(R.id.btn_makeMatches);
+
+        //Begin Fragment4 declarations
+        pWizardLv = (ListView) findViewById(R.id.lv_sPlacementWizard);
+        generateBtn = (Button) findViewById(R.id.btn_generate);
 
         //View Pager stuff
         viewPager = (ViewPager) findViewById(R.id.studentPager);
@@ -223,11 +244,29 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         newFragment.show(getSupportFragmentManager(), "DatePicker");
     }
 
+    public void filterSelectDate1(View view) {
+        DialogFragment newFragment = new SelectDateFragment();
+        if(clicked_date3 == false) {
+            clicked_date3 = true;
+        }
+        newFragment.show(getSupportFragmentManager(), "DatePicker");
+    }
+    public void filterSelectDate2(View view) {
+        DialogFragment newFragment = new SelectDateFragment();
+        if(clicked_date4 == false) {
+            clicked_date4 = true;
+        }
+        newFragment.show(getSupportFragmentManager(), "DatePicker");
+    }
+
 
     public void populateSetDate(int year, int month, int day) {
 
         date1Etxt = (EditText) findViewById(R.id.etxt_sDate1);
         date2Etxt = (EditText) findViewById(R.id.etxt_sDate2);
+        fDate1Etxt = (EditText) findViewById(R.id.etxt_swDate1);
+        fDate2Etxt = (EditText) findViewById(R.id.etxt_swDate2);
+
         if(clicked_date1) {
             date1Etxt.setText(month + "/" + day + "/" + year);
             System.out.println("First host");
@@ -237,6 +276,16 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
             date2Etxt.setText(month + "/" + day + "/" + year);
             System.out.println("Second host");
             clicked_date2 = false;
+        }
+        if(clicked_date3) {
+            fDate1Etxt.setText(month + "/" + day + "/" + year);
+            System.out.println("First host");
+            clicked_date3 = false;
+        }
+        if(clicked_date4) {
+            fDate2Etxt.setText(month + "/" + day + "/" + year);
+            System.out.println("First host");
+            clicked_date4 = false;
         }
     }
 

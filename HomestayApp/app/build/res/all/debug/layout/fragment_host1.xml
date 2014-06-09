@@ -74,16 +74,6 @@
         android:layout_alignStart="@+id/cbox_hHide2"
         android:checked="false" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hide"
-        android:id="@+id/cbox_hHide3"
-        android:checked="false"
-        android:layout_below="@+id/etxt_hEmail"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -262,14 +252,14 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"
+            android:text="Yes"
             android:id="@+id/rbtn_hPrefMale"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female"
+            android:text="No"
             android:id="@+id/rbtn_hPrefFemale"
             android:checked="false" />
         <RadioButton
@@ -347,3 +337,4 @@
 
 </RelativeLayout>
 </ScrollView>
+<!-- From: file:/C:/Users/Chiharu/homestaymanager/HomestayApp/app/src/main/res/layout/fragment_host1.xml -->

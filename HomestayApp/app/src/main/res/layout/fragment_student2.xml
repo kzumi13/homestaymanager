@@ -1,8 +1,3 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fillViewport="false">
-
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -24,20 +19,4 @@
         android:id="@+id/listView_sMatches"
         android:layout_weight="5.65" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Maunal Selection"
-        android:id="@+id/btn_mSelect"
-        android:background="#808080" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Placement Wizard"
-        android:id="@+id/btn_pWizard"
-        android:background="#808080"
-        android:layout_marginTop="10dp" />
-
 </LinearLayout>
-</ScrollView>

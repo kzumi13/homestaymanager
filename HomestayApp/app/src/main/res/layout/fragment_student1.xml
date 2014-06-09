@@ -116,7 +116,7 @@ android:layout_height="fill_parent"
         android:layout_alignBottom="@+id/etxt_sDate1"
         android:layout_toRightOf="@+id/etxt_sDate1"
         android:cropToPadding="true"
-        android:onClick="studentSelectDate"/>
+        android:onClick="studentSelectDate1"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -149,7 +149,7 @@ android:layout_height="fill_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/etxt_sDate2"
         android:cropToPadding="true"
-        android:onClick="studentSelectDate1"
+        android:onClick="studentSelectDate2"
         android:layout_alignBottom="@+id/etxt_sDate1"/>
 
     <TextView

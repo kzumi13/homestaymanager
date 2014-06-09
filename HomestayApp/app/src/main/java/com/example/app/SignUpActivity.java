@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,33 +27,101 @@ public class SignUpActivity extends ActionBarActivity {
 
     private static final int REQUEST_CODE= 1;
 
+    //date picker stuff
     boolean clicked_sDate1 = false;
     boolean clicked_sDate2 = false;
     boolean clicked_hDate1 = false;
     boolean clicked_hDate2 = false;
 
-    int signUpType;
-    private Button finishBtn;
-    private ImageView imageView;
+    RadioButton host_rbtn;
+    RadioButton student_rbtn;
+    RadioButton admin_rbtn;
 
-    EditText host_date1;
-    EditText host_date2;
+    //Begin basic/admin input declarations-----------------------!
+    private ImageView profilePic;
+    private EditText userNameEtxt;
+    private EditText nameEtxt;
+    private EditText emailEtxt;
+    private EditText passwordEtxt;
+    private EditText rePasswordEtxt;
+    private RadioButton genderMRbtn;
+    private RadioButton genderFRbtn;
+    private Button finishBtn;
+
+    //Begin student declarations----------------------------------!
     EditText student_date1;
     EditText student_date2;
+
+    private EditText sdistanceEtxt;
+
+    private CheckBox sdogCbox;
+    private CheckBox scatCbox;
+    private CheckBox snoPreferenceCbox;
+    private CheckBox snoPetsCbox;
+
+    private RadioButton ssmokeYesRBtn;
+    private RadioButton ssmokeNoRbtn;
+
+    private  RadioButton schildYesRbtn;
+    private RadioButton schildNoRbtn;
+
+    private EditText sotherInfoEtxt;
+
+    //Begin host delcarations---------------------------------!
+    EditText host_date1;
+    EditText host_date2;
+    private EditText hdistanceEtxt;
+
+    private CheckBox hdogCbox;
+    private CheckBox hcatCbox;
+    private CheckBox hnoPetsCbox;
+
+    private RadioButton hsmokeYesRBtn;
+    private RadioButton hsmokeNoRbtn;
+
+    private RadioButton hgpYesRbtn;
+    private RadioButton hgpNoRbtn;
+    private RadioButton hgpNoneRbtn;
+
+    private RadioButton hchildYesRbtn;
+    private RadioButton hchildNoRbtn;
+
+    private EditText hotherInfoEtxt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        signUpType = 1; //init to 1 since default radio button position is on student
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        //TODO FIND EVERY MOTHERFUCKER BY ITS GODDAMMED ID!!!!!
+        //Basic/admin widgets
+        userNameEtxt = (EditText) findViewById(R.id.etxt_userName);
+        nameEtxt = (EditText) findViewById(R.id.etxt_name);
+        emailEtxt = (EditText) findViewById(R.id.etxt_signUpEmail);
+        passwordEtxt = (EditText) findViewById(R.id.etxt_password);
+        rePasswordEtxt = (EditText) findViewById(R.id.etxt_repassword);
+        genderMRbtn = (RadioButton) findViewById(R.id.rbtn_male);
+        genderFRbtn = (RadioButton) findViewById(R.id.rbtn_female);
+
+        //Student declarations
+        sdistanceEtxt = (EditText) findViewById(R.id.etxt_distanceSU);
+        sdogCbox = (CheckBox) findViewById(R.id.cbox_dogSU);
+        scatCbox = (CheckBox) findViewById(R.id.cbox_catSU);
+        snoPreferenceCbox = (CheckBox) findViewById(R.id.cbox_catSU);
+        snoPetsCbox = (CheckBox) findViewById(R.id.cbox_catSU);
+        ssmokeYesRBtn = (RadioButton) findViewById(R.id.rbtn_smokeYesSU);
+        ssmokeNoRbtn = (RadioButton) findViewById(R.id.rbtn_smokeNoSU);
+        schildYesRbtn = (RadioButton) findViewById(R.id.rbtn_childYesSU);
+        schildNoRbtn = (RadioButton) findViewById(R.id.rbtn_childNoSU);
+        sotherInfoEtxt = (EditText) findViewById(R.id.etxt_otherInfoSU);
+
         //set on click listener for Image
         // begin imgView stuff -------------------------------------------------------------------------------------------------------
-        imageView = (ImageView) findViewById(R.id.img_profile);
-        imageView.setClickable(true);
-        imageView.setOnClickListener(new View.OnClickListener(){
+        profilePic = (ImageView) findViewById(R.id.img_profile);
+        profilePic.setClickable(true);
+        profilePic.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent intent = new Intent();
@@ -68,25 +137,37 @@ public class SignUpActivity extends ActionBarActivity {
         finishBtn = (Button) findViewById(R.id.btn_finish);
         //Go to new activity based on user input
 
+        student_rbtn = (RadioButton) findViewById(R.id.rbtn_student);
+        host_rbtn = (RadioButton) findViewById(R.id.rbtn_host);
+        admin_rbtn = (RadioButton) findViewById(R.id.rbtn_admin);
+
         // Set Finish button stuff
         finishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO: Check to see if info is valid
-                if(signUpType == 1) {
+                if(student_rbtn.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Student Profile", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(SignUpActivity.this, StudentActivity.class);
+                    startActivity(intent);
+
                 }
-                if(signUpType == 2) {
+                if(host_rbtn.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Host Profile", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(SignUpActivity.this, HostActivity.class);
+                    startActivity(intent);
+
                 }
-                if(signUpType == 3) {
+                if(admin_rbtn.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Admin Profile", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignUpActivity.this, AdminActivity.class);
+                    startActivity(intent);
                 }
             }
         });
         // END finish button------------------------------------------------------------------------
-
-
     }
 
     // DATE PICKER SHIT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

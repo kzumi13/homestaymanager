@@ -172,14 +172,14 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes"
+            android:text="Male"
             android:id="@+id/rbtn_prefMaleHU"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No"
+            android:text="Female"
             android:id="@+id/rbtn_prefFemaleHU"
             android:checked="false" />
         <RadioButton

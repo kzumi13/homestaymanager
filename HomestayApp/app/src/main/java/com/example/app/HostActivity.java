@@ -2,8 +2,12 @@ package com.example.app;
 
 import android.annotation.TargetApi;
 import android.app.ActionBar;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Build;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -12,6 +16,16 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RadioButton;
+
+import java.util.Calendar;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -20,13 +34,56 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
     ViewPager viewPager = null;
     ActionBar actionBar;
 
+    private static final int REQUEST_CODE= 1;
+
+    //Date picker delcaration
+    boolean clicked_date1 = false;
+    boolean clicked_date2 = false;
+
+    //Begin Fragment1 Declaration
+    private ImageView profilePicIv;
+    private EditText nameEtxt;
+    private EditText phoneNumberEtxt;
+    private EditText emailEtxt;
+    private EditText addressEtxt;
+    private EditText date1Etxt;
+    private EditText date2Etxt;
+    private EditText distanceEtxt;
+
+    private CheckBox dogCbox;
+    private CheckBox catCbox;
+    private CheckBox noPetsCbox;
+
+    private RadioButton smokeYesRBtn;
+    private RadioButton smokeNoRbtn;
+
+    private RadioButton gpYesRbtn;
+    private RadioButton gpNoRbtn;
+    private RadioButton gpNoneRbtn;
+
+    private RadioButton childYesRbtn;
+    private RadioButton childNoRbtn;
+
+    private EditText otherInfoEtxt;
+    private Button saveBtn;
+    private Button undoBtn;
+
+    //Begin Fragment2 Declaration
+    private ListView matchesLv;
+
+    //Begin Fragment3 Declaration
+    private EditText studentSearchEtxt;
+    private ListView studentSearchLv;
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_host);
 
-        //View Pager stuff
+        //TODO FIND EVERY MOTHERFUCKER BY ITS GODDAMMED ID!!!!!
+
+        //BEGIN View Pager stuff --------------------------------------------------------------------------------------------------------------
         viewPager = (ViewPager) findViewById(R.id.hostPager);
         FragmentManager fragmentManager = getSupportFragmentManager();
         viewPager.setAdapter(new HostAdapter(fragmentManager));
@@ -48,7 +105,7 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
             }
         });
 
-        //Action Bar stuff
+        //Action Bar stuff -----------------------------------------------------------------------------------------------------
         actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -71,26 +128,6 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.host, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
 
     //actionBar functions
     @Override
@@ -107,6 +144,56 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         //NO IMPLEMENTATION NEED
     }
+
+    //BEGIN date picker stuff ---------------------------------------------------------------------------
+    public void hSelectDate1(View view) {
+        DialogFragment newFragment = new SelectDateFragment();
+        if(clicked_date2 == false) {
+            clicked_date1 = true;
+        }
+        newFragment.show(getSupportFragmentManager(), "DatePicker");
+    }
+
+    public void hSelectDate2(View view) {
+        DialogFragment newFragment = new SelectDateFragment();
+        if(clicked_date2 == false) {
+            clicked_date2 = true;
+        }
+        newFragment.show(getSupportFragmentManager(), "DatePicker");
+    }
+
+
+    public void populateSetDate(int year, int month, int day) {
+
+        date1Etxt = (EditText) findViewById(R.id.etxt_hDate1);
+        date2Etxt = (EditText) findViewById(R.id.etxt_hDate2);
+        if(clicked_date1) {
+            date1Etxt.setText(month + "/" + day + "/" + year);
+            System.out.println("First host");
+            clicked_date1 = false;
+        }
+        if (clicked_date2) {
+            date2Etxt.setText(month + "/" + day + "/" + year);
+            System.out.println("Second host");
+            clicked_date2 = false;
+        }
+    }
+
+    public class SelectDateFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            final Calendar calendar = Calendar.getInstance();
+            int yy = calendar.get(Calendar.YEAR);
+            int mm = calendar.get(Calendar.MONTH);
+            int dd = calendar.get(Calendar.DAY_OF_MONTH);
+            return new DatePickerDialog(getActivity(), this, yy, mm, dd);
+        }
+
+        public void onDateSet(DatePicker view, int yy, int mm, int dd) {
+            populateSetDate(yy, mm + 1, dd);
+        }
+    }
+        //END date picker ------------------------------------------------------------------------------
 }
 
 //Make pager adapter class
@@ -141,17 +228,6 @@ class HostAdapter extends FragmentStatePagerAdapter
         return NUMTABS;
     }
 
-    /*
-    @Override
-    public CharSequence getPageTitle(int position) {
-        if(position == 0){
-            return "My Profile";
-        }
-        else if(position == 1){
-            return "My Matches";
-        }
-        return null;
-    }
-    */
+
 }
 

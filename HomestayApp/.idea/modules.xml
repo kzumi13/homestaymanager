@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
+<<<<<<< HEAD
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HomestayApp.iml" filepath="$PROJECT_DIR$/HomestayApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
+=======
+    <modules />
+>>>>>>> 5e50521b31fc9956cf22d614eee0ad0648e96f41
   </component>
 </project>
 

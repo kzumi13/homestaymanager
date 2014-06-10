@@ -11,7 +11,6 @@
         android:text="Sign In"
         android:id="@+id/textView3"
         android:textSize="40dp"
-        android:textStyle=
         android:background="#33B5E5" />
 
     <ImageView
@@ -29,9 +28,6 @@
         android:ems="10"
         android:id="@+id/etxt_userLogin"
         android:hint="Enter Username"
-        android:layout_below="@+id/txt_gender"
-        android:layout_alignRight="@+id/btn_login"
-        android:layout_alignEnd="@+id/btn_login"
         android:textSize="20dp"
         android:paddingTop="20dp" />
 
@@ -42,8 +38,6 @@
         android:ems="10"
         android:id="@+id/etxt_passLogin"
         android:layout_below="@+id/etxt_userLogin"
-        android:layout_alignLeft="@+id/etxt_userLogin"
-        android:layout_alignStart="@+id/etxt_userLogin"
         android:hint="Enter Password"
         android:textSize="20dp" />
 
@@ -52,8 +46,8 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/btn_login"
-        android:layout_below="@+id/etxt_pwLogin"
-        android:layout_toLeftOf="@+id/btn_signUp"
+        android:layout_below="@+id/etxt_passLogin"
+        android:layout_toLeftOf="@+id/btn_login"
         android:layout_gravity="center_horizontal" />
 
     <Button

@@ -232,6 +232,7 @@ public class SignUpActivity extends ActionBarActivity {
 
                 //admin account type selected
                 else if(admin_rbtn.isChecked()) {
+                    userRef.child("profileType").setValue("admin");
                     Toast.makeText(getApplicationContext(), "Admin Profile", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUpActivity.this, AdminActivity.class);
                     startActivity(intent);

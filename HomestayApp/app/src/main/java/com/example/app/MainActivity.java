@@ -29,7 +29,7 @@ import java.util.Map;
 public class MainActivity extends ActionBarActivity {
 
     public static String userName;
-
+    public static Search mySearch;
     Fragment    fragment;
     Button      signUpBtn,
                 loginBtn;
@@ -70,6 +70,9 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }*/
+
+        mySearch.populateUserList("https://popping-fire-8794.firebaseio.com/users/");
+        mySearch.populateMatchList("https://popping-fire-8794.firebaseio.com/matches/");
 
         loginBtn = (Button) findViewById(R.id.btn_login);
         eLoginEtxt = (EditText) findViewById(R.id.etxt_userLogin);

@@ -49,30 +49,8 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
     boolean clicked_date4 = false;
 
     //Begin Fragment1 Declaration
-    private ImageView profilePicIv;
-    private EditText nameEtxt;
-    private EditText phoneNumberEtxt;
-    private EditText emailEtxt;
-    private EditText addressEtxt;
     private EditText date1Etxt;
     private EditText date2Etxt;
-    private Button date1Btn;
-    private Button date2Btn;
-    private EditText distanceEtxt;
-    private CheckBox dogCbox;
-    private CheckBox catCbox;
-    private CheckBox noPreferenceCbox;
-    private CheckBox noPetsCbox;
-    private RadioButton smokeYesRBtn;
-    private RadioButton smokeNoRbtn;
-    private RadioButton gpYesRbtn;
-    private RadioButton gpNoRbtn;
-    private RadioButton gpNoneRbtn;
-    private  RadioButton childYesRbtn;
-    private RadioButton childNoRbtn;
-    private EditText otherInfoEtxt;
-    private Button saveBtn;
-    private Button undoBtn;
 
     //Begin Fragmennt2 Declaration
     private ListView myMatchesLv;

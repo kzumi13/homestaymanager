@@ -45,12 +45,20 @@
         android:layout_alignRight="@+id/etxt_adminPhone"
         android:layout_alignEnd="@+id/etxt_adminPhone" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxt_adminAddress"
+        android:text="12345 Address way, Davis CA 95616"
+        android:layout_below="@+id/etxt_adminEmail"
+        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_aSave"
         android:text="Save"
-        android:layout_below="@+id/etxt_adminEmail"
+        android:layout_below="@+id/etxt_adminAddress"
         />
 
     <Button

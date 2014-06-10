@@ -41,6 +41,7 @@ public class Admin1Fragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_admin1, container, false);
 
+        saveBtn = (Button) rootView.findViewById(R.id.btn_aSave);
         nameEtxt = (EditText) rootView.findViewById(R.id.etxt_adminName);
         phoneNumberEtxt = (EditText) rootView.findViewById(R.id.etxt_adminPhone);
         emailEtxt = (EditText) rootView.findViewById(R.id.etxt_adminEmail);

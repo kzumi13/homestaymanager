@@ -138,7 +138,7 @@ class AdminAdapter extends FragmentStatePagerAdapter
             fragment = new Admin3Fragment();
         }
         else if(position == 3) {
-            fragment = new Admin4Fragment();
+            fragment = new myMatches();
         }
         return fragment;
     }

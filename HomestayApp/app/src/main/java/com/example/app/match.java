@@ -7,16 +7,18 @@ public class Match {
     private String student;
     private String host;
     private String approved;
+    private String id;
 
-    public void Match(){
+    public Match(){
         //basic constructor
     }
 
-    public void Match(String student, String host, String approved){
+    public Match(String student, String host, String approved){
         this.student = student;
         this.host = host;
         this.approved = approved;
     }
+
 
     public void setStudent(String student){
         this.student = student;

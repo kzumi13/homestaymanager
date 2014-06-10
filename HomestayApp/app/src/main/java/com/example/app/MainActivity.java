@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,12 +25,17 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class MainActivity extends ActionBarActivity {
 
+    private static final String TAG = "MainActivity";
+
+
+
     public static String userName;
-    public static Search mySearch;
+
     Fragment    fragment;
     Button      signUpBtn,
                 loginBtn;
@@ -70,9 +76,6 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }*/
-
-        mySearch.populateUserList("https://popping-fire-8794.firebaseio.com/users/");
-        mySearch.populateMatchList("https://popping-fire-8794.firebaseio.com/matches/");
 
         loginBtn = (Button) findViewById(R.id.btn_login);
         eLoginEtxt = (EditText) findViewById(R.id.etxt_userLogin);

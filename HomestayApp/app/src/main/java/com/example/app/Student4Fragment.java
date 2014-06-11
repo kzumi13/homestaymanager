@@ -133,11 +133,11 @@ public class Student4Fragment extends Fragment {
                                 //Set user rating based upon compatibility
                                 if(((String)((Map)valueName).get("dog")).equals(dog))
                                     aHost.rating++;
-                                if(((String)((Map)valueName).get("cat")).equals(cat))
+                                if(snap.child("cat").getValue(String.class).equals(cat))
                                     aHost.rating++;
                                 if(((String)((Map)valueName).get("smoke")).equals(smoke))
                                     aHost.rating++;
-                                String hDistance = (String) ((Map)valueName).get("distance");
+                                String hDistance = snap.child("distance").getValue(String.class);
                                 if(Integer.parseInt(hDistance) <= Integer.parseInt(distance))
                                     aHost.rating++;
                                 if(((String)((Map)valueName).get("child")).equals(child));

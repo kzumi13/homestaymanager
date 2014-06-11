@@ -10,7 +10,7 @@ public class User {
     public String phone;
     public String address;
     public String userType;
-
+    //comment
     public void User (){
         //basic constructor
     }

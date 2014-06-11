@@ -167,6 +167,7 @@ android:layout_height="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etxt_sDistance"
         android:layout_below="@+id/txt_sDistance"
+        android:inputType="number"
         android:hint="Enter Preferred Distance from Campus"/>
 
     <TextView

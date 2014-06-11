@@ -8316,28 +8316,13 @@ false
                 qualifiers=""
                 type="layout" />
             <file
-                name="fragment_admin2"
-                path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_admin2.xml"
-                qualifiers=""
-                type="layout" />
-            <file
                 name="fragment_admin3"
                 path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_admin3.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                name="fragment_admin4"
-                path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_admin4.xml"
-                qualifiers=""
-                type="layout" />
-            <file
                 name="fragment_host1"
                 path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_host1.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_host2"
-                path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_host2.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -8353,11 +8338,6 @@ false
             <file
                 name="fragment_student1"
                 path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_student1.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_student2"
-                path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_student2.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -8472,6 +8452,21 @@ false
             <file
                 name="match_layout"
                 path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\match_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="student_layout"
+                path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\student_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_student_search"
+                path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\fragment_student_search.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="wizard_layout"
+                path="C:\Users\Chiharu\homestaymanager\HomestayApp\app\src\main\res\layout\wizard_layout.xml"
                 qualifiers=""
                 type="layout" />
         </source>

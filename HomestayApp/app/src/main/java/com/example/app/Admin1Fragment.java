@@ -35,6 +35,7 @@ public class Admin1Fragment extends Fragment {
     private EditText addressEtxt;
     private Button saveBtn;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -83,7 +83,6 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
 
         //TODO FIND EVERY MOTHERFUCKER BY ITS GODDAMMED ID!!!!!
         //Begin fragment 2 declarations
-        myMatchesLv = (ListView)findViewById(R.id.lv_hMatches);
 
         //Begin Fragment3 Delcaration
         hostSearchEtxt = (EditText) findViewById(R.id.etxt_sHostSearch);
@@ -287,7 +286,7 @@ class StudentAdapter extends FragmentStatePagerAdapter
             fragment = new Student1Fragment();
         }
         else if(position == 1){
-            fragment = new Student2Fragment();
+            fragment = new myMatches();
         }
         else if(position == 2){
             fragment = new Student3Fragment();

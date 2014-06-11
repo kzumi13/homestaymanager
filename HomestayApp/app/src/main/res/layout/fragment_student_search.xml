@@ -8,13 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="My Matches"
-        android:id="@+id/textView"
-        android:background="#33B5E5"/>
+        android:text="Search for Students"
+        android:background="#33B5E5"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/etxt_studentSearch" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lv_hMatches" />
-
-</LinearLayout><!-- From: file:/C:/Users/Chiharu/homestaymanager/HomestayApp/app/src/main/res/layout/fragment_host2.xml -->
+        android:id="@+id/lv_studentSearch" />
+</LinearLayout>

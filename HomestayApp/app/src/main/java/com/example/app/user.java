@@ -6,16 +6,22 @@ package com.example.app;
 public class User {
     public String userName;
     public int rating; //rating will be used for placement wizard
+    public String email;
+    public String phone;
+    public String address;
     public String userType;
 
     public void User (){
         //basic constructor
     }
 
-    public void User(String userName, int rating, String userType){
+    public void User(String userName, int rating, String userType, String email, String address, String phone){
         this.userName = userName;
         this.rating = rating;
         this.userType = userType;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
     }
 
 
@@ -30,6 +36,18 @@ public class User {
         this.rating = rating;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     //get
     public String getUserName() {
         return userName;
@@ -39,5 +57,17 @@ public class User {
     }
     public String getUserType() {
         return userType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 }

@@ -36,8 +36,6 @@ dependencies {
     compile 'com.android.support:support-v4:19.+'
     compile 'com.android.support:support-v4:19.+'
     compile 'com.android.support:support-v4:19.+'
-    compile 'com.android.support:appcompat-v7:19.+'
-    compile 'com.android.support:support-v4:19.+'
     compile 'com.android.support:support-v4:19.+'
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.android.support:support-v4:19.+'
@@ -52,6 +50,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.android.support:support-v4:19.+'
     compile files('libs/firebase-client-jvm-LATEST.jar')
+    compile 'com.android.support:support-v4:19.+'
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:support-v4:19.+'
     compile 'com.android.support:support-v4:19.+'
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.android.support:support-v4:19.+'

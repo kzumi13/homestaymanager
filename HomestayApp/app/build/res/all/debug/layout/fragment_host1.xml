@@ -178,6 +178,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/etxt_hDistance"
         android:layout_below="@+id/txt_hDistance"
+        android:inputType="number"
         android:hint="Enter Distance from Campus"/>
 
     <TextView

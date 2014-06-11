@@ -132,7 +132,7 @@ class AdminAdapter extends FragmentStatePagerAdapter
             fragment = new Admin1Fragment();
         }
         else if(position == 1){
-            fragment = new Admin2Fragment();
+            fragment = new StudentSearch();
         }
         else if(position == 2){
             fragment = new Admin3Fragment();

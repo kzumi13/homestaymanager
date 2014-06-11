@@ -118,7 +118,6 @@ public class HostActivity extends ActionBarActivity implements ActionBar.TabList
         undoBtn = (Button) findViewById(R.id.btn_hUndo);
 
         //Begin Fragment2 Declaration
-        matchesLv = (ListView) findViewById(R.id.lv_hMatches);
 
         //Begin Fragment3 Declaration
         studentSearchEtxt = (EditText) findViewById(R.id.etxt_hStudentSearch);
@@ -257,10 +256,10 @@ class HostAdapter extends FragmentStatePagerAdapter
             fragment = new Host1Fragment();
         }
         else if(position == 1){
-            fragment = new Host2Fragment();
+            fragment = new myMatches();
         }
         else if(position == 2){
-            fragment = new Host3Fragment();
+            fragment = new StudentSearch();
         }
         return fragment;
     }

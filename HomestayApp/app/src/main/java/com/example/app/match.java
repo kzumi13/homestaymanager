@@ -13,10 +13,11 @@ public class Match {
         //basic constructor
     }
 
-    public Match(String student, String host, String approved){
+    public Match(String student, String host, String approved, String id){
         this.student = student;
         this.host = host;
         this.approved = approved;
+        this.id = id;
     }
 
 
@@ -26,9 +27,11 @@ public class Match {
     public void setApproved(String approved) {
         this.approved = approved;
     }
-
     public void setHost(String host) {
         this.host = host;
+    }
+    public void setId(String id){
+        this.id = id;
     }
 
     public String getApproved() {
@@ -41,5 +44,9 @@ public class Match {
 
     public String getStudent() {
         return student;
+    }
+
+    public String getId(){
+        return  id;
     }
 }

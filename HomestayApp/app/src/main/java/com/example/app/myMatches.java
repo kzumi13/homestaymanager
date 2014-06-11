@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,17 +24,9 @@ import com.firebase.client.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link myMatches.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link myMatches#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
 public class myMatches extends Fragment {
 
     private ArrayList<Match> matches = new ArrayList<Match>();
@@ -41,27 +34,34 @@ public class myMatches extends Fragment {
 
     private ListView myMatchesLv;
     private String profileType;
-    private String userName;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_my_matches, container, false);
-
+        matches.clear();
         myMatchesLv = (ListView) rootView.findViewById(R.id.lv_matches);
 
+        Log.d(TAG, "in onCreate");
         //BEGIN FIREBASE STUFF -------------------------------------------------------------------------------------------------
-        final Firebase userRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + MainActivity.userName);
+        Firebase userRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/");
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                Object value = snapshot.getValue();
+                Log.d(TAG,  "IN onDataChange");
+                Object value = snapshot.child(MainActivity.userName).getValue();
                 if (value == null) {
                     System.out.println("User julie doesn't exist");
                 } else {
+                    Log.d(TAG, (String)((Map)value).get("profileType") + ": SET PROFILETYPE");
                     profileType = (String)((Map)value).get("profileType");
-                    userName = (String)((Map)value).get("name");
                 }
             }
 
@@ -71,16 +71,29 @@ public class myMatches extends Fragment {
             }
         });
 
-        Firebase baseRef = new Firebase("https://popping-fire-8794.firebaseio.com/matches/");
+        Firebase baseRef = new Firebase("https://popping-fire-8794.firebaseio.com/matches");
         baseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+                Log.d(TAG, "IN onDataChange for matches");
                 for(DataSnapshot data : snapshot.getChildren()) {
+                    String name = data.getName();
+                    Object valueName = snapshot.child(name).getValue();
                     Match aMatch = new Match();
-                    aMatch.setStudent(data.child("student").getValue(String.class));
-                    aMatch.setHost(data.child("host").getValue(String.class));
-                    aMatch.setApproved(data.child("approved").getValue(String.class));
-                    matches.add(aMatch);
+                    aMatch.setStudent((String) ((Map) valueName).get("student"));
+                    aMatch.setHost((String) ((Map) valueName).get("host"));
+                    aMatch.setApproved((String) ((Map) valueName).get("approved"));
+                    aMatch.setId(data.getName());
+                    if(profileType.equals("student")){
+                        if(aMatch.getStudent().equals(MainActivity.userName))
+                            matches.add(aMatch);
+                    }
+                    else if (profileType.equals("host")){
+                        if(aMatch.getHost().equals(MainActivity.userName))
+                            matches.add(aMatch);
+                    }
+                    else
+                        matches.add(aMatch);
                 }
             }
 
@@ -90,18 +103,6 @@ public class myMatches extends Fragment {
             }
         });
         //END FIREBASE STUFF--------------------------------------------------------------------------------------------
-
-        Log.d(TAG, "Print matches");
-        for(Match bleh : matches){
-            Log.d(TAG, "INFOR!");
-            Log.d(TAG, bleh.getStudent());
-        }
-
-        Match match2 = new Match("FAG1", "FAG2", "y");
-        Match match3 = new Match("jeerrry", "LOLOL", "y");
-
-        matches.add(match2);
-        matches.add(match3);
 
         MatchArrayAdapter myAdapter = new MatchArrayAdapter(matches, getActivity().getApplicationContext());
         myMatchesLv.setAdapter(myAdapter);
@@ -141,14 +142,37 @@ public class myMatches extends Fragment {
         public View getView(int i, View view, ViewGroup viewGroup) {
             if(view == null)
                 view = myInflator.inflate(R.layout.match_layout, viewGroup, false);
-                TextView student = (TextView)view.findViewById(R.id.txt_matchStudent);
-                TextView host = (TextView)view.findViewById(R.id.txt_matchHost);
-                CheckBox approved = (CheckBox)view.findViewById(R.id.cbox_match);
 
-                student.setText(matches.get(i).getStudent());
-                host.setText(matches.get(i).getHost());
-                if(matches.get(i).getApproved().equals("y"))
-                    approved.setChecked(true);
+            TextView student = (TextView)view.findViewById(R.id.txt_matchStudent);
+            TextView host = (TextView)view.findViewById(R.id.txt_matchHost);
+            final CheckBox approved = (CheckBox)view.findViewById(R.id.cbox_match);
+
+            student.setText(matches.get(i).getStudent());
+            host.setText(matches.get(i).getHost());
+            if(matches.get(i).getApproved().equals("y"))
+                approved.setChecked(true);
+            final int pos = i;
+
+            if(profileType.equals("admin")) {
+                approved.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                        String id = matches.get(pos).getId();
+                        Log.d(TAG, "Check: " + id);
+                        Firebase matchRef = new Firebase("https://popping-fire-8794.firebaseio.com/matches/" + id);
+                        if (b) {
+                            Log.d(TAG, "CheckYES");
+                            matchRef.child("approved").setValue("y");
+                        } else {
+                            Log.d(TAG, "CheckNO");
+                            matchRef.child("approved").setValue("n");
+                        }
+                    }
+                });
+            }
+            else{
+                approved.setClickable(false);
+            }
 
             return view;
         }

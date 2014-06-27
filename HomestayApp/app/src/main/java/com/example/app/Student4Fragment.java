@@ -73,7 +73,8 @@ public class Student4Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //if(MainActivity.loginType.equals("student"))
+            //MainActivity.userName = MainActivity.returnName;
         rootView = inflater.inflate(R.layout.fragment_student4, container, false);
 
         super.onCreate(savedInstanceState);
@@ -103,7 +104,7 @@ public class Student4Fragment extends Fragment {
                             child = (String)((Map)valueName).get("child");
                             date1 = (String)((Map)valueName).get("dog");
                             date2 = (String)((Map)valueName).get("dog");
-                            gender = (String)((Map)valueName).get("dog");
+                            gender = (String)((Map)valueName).get("gender");
                         }
                     }
 
@@ -121,8 +122,7 @@ public class Student4Fragment extends Fragment {
                         for(DataSnapshot snap : snapshot.getChildren())
                         {
                             String username = snap.getName();
-                            Object valueName = snapshot.child(username).getValue();
-                            String studentType = (String)((Map)valueName).get("profileType");
+                            String studentType = snap.child("profileType").getValue(String.class);
 
                             if(studentType.equals("host")) {
                                 Log.d(TAG, "HOST: " + username);
@@ -131,19 +131,21 @@ public class Student4Fragment extends Fragment {
                                 aHost.setRating(0);
 
                                 //Set user rating based upon compatibility
-                                if(((String)((Map)valueName).get("dog")).equals(dog))
+                                if(snap.child("dog").getValue(String.class).equals(dog))
                                     aHost.rating++;
                                 if(snap.child("cat").getValue(String.class).equals(cat))
                                     aHost.rating++;
-                                if(((String)((Map)valueName).get("smoke")).equals(smoke))
+                                if(snap.child("smoke").getValue(String.class).equals(smoke))
                                     aHost.rating++;
                                 String hDistance = snap.child("distance").getValue(String.class);
                                 if(Integer.parseInt(hDistance) <= Integer.parseInt(distance))
                                     aHost.rating++;
-                                if(((String)((Map)valueName).get("child")).equals(child));
-                                aHost.rating++;
-                                if(((String)((Map)valueName).get("genderPref")).equals(gender));
-                                aHost.rating++;
+                                if(snap.child("child").getValue(String.class).equals(child))
+                                    aHost.rating++;
+                                if(snap.child("genderPref").getValue(String.class).equals("idc"))
+                                    aHost.rating++;
+                                else if(snap.child("genderPref").getValue(String.class).equals(gender))
+                                    aHost.rating++;
                                 Log.d(TAG, "rating: " + aHost.rating);
                                 hosts.add(aHost);
                             }
@@ -202,6 +204,15 @@ public class Student4Fragment extends Fragment {
             Button wizardBtn = (Button)view.findViewById(R.id.btn_wizard);
 
             wizardNameTxt.setText(hosts.get(i).getUserName());
+            wizardNameTxt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MainActivity.userName = hosts.get(i).getUserName();
+                    Log.d(TAG, "TextClicked");
+                    Intent intent = new Intent(getActivity(), HostActivity.class);
+                    startActivity(intent);
+                }
+            });
 
             wizardBtn.setOnClickListener(new View.OnClickListener() {
                 int numMatches;

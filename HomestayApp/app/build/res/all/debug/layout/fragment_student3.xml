@@ -13,15 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hosts"
+        android:text="Host Search"
         android:id="@+id/txt_placementWizard"
         android:background="#33B5E5"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etxt_sHostSearch"
-        android:hint="Search"/>
 
     <ListView
         android:layout_width="match_parent"
@@ -144,9 +138,17 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/cbox_swNoPref"
+            android:text="No Preference"
+            android:layout_below="@+id/cbox_swCat"
+            />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/cbox_swNoPets"
             android:text="No Pets"
-            android:layout_below="@+id/cbox_swCat"
+            android:layout_below="@+id/cbox_swNoPref"
             />
 
         <TextView
@@ -217,11 +219,8 @@
         android:id="@+id/btn_filter"
         android:text="Filter Hosts"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/btn_makeMatches"
-        android:text="Make Matches"/>
+
+
 
 </LinearLayout>
 </ScrollView><!-- From: file:/C:/Users/Chiharu/homestaymanager/HomestayApp/app/src/main/res/layout/fragment_student3.xml -->

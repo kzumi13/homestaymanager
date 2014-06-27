@@ -85,7 +85,6 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         //Begin fragment 2 declarations
 
         //Begin Fragment3 Delcaration
-        hostSearchEtxt = (EditText) findViewById(R.id.etxt_sHostSearch);
         hostSearchLv = (ListView) findViewById(R.id.lv_sHosts);
         fDate1Etxt = (EditText) findViewById(R.id.etxt_swDate1);
         fDate2Etxt = (EditText) findViewById(R.id.etxt_swDate2);
@@ -98,11 +97,6 @@ public class StudentActivity extends ActionBarActivity implements ActionBar.TabL
         fChildYesRbtn = (RadioButton) findViewById(R.id.rbtn_swChildYes);
         fChildNoRbtn = (RadioButton) findViewById(R.id.rbtn_swChildNo);
         filterBtn = (Button) findViewById(R.id.btn_filter);
-        makeMatchBtn = (Button) findViewById(R.id.btn_makeMatches);
-
-        //Begin Fragment4 declarations
-        pWizardLv = (ListView) findViewById(R.id.lv_sPlacementWizard);
-        generateBtn = (Button) findViewById(R.id.btn_generate);
 
         //View Pager stuff
         viewPager = (ViewPager) findViewById(R.id.studentPager);

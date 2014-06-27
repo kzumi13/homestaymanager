@@ -31,9 +31,8 @@ import java.util.Map;
 public class MainActivity extends ActionBarActivity {
 
     private static final String TAG = "MainActivity";
-
-
-
+    public static String returnName;
+    public static String loginType;
     public static String userName;
 
     Fragment    fragment;
@@ -88,6 +87,7 @@ public class MainActivity extends ActionBarActivity {
                 final String usernameValue = eLoginEtxt.getText().toString();
 
                 userName = eLoginEtxt.getText().toString();
+                returnName = userName;
 
                 Firebase passwordRef = new Firebase("https://popping-fire-8794.firebaseio.com/users/" + usernameValue);
                 passwordRef.addValueEventListener(new ValueEventListener() {
@@ -104,14 +104,17 @@ public class MainActivity extends ActionBarActivity {
                                 String profileT = (String)((Map)value).get("profileType");
                                 if(profileT.equals("host")){
                                     Intent intent = new Intent(MainActivity.this, HostActivity.class);
+                                    loginType = "host";
                                     startActivity(intent);
                                 }
                                 if(profileT.equals("student")){
                                     Intent intent = new Intent(MainActivity.this, StudentActivity.class);
+                                    loginType = "student";
                                     startActivity(intent);
                                 }
                                 if(profileT.equals("admin")){
                                     Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                                    loginType = "admin";
                                     startActivity(intent);
                                 }
                             }

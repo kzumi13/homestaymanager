@@ -192,8 +192,8 @@ public class SignUpActivity extends ActionBarActivity {
                 //host account type selected
                 else if(host_rbtn.isChecked()) {
 
-                    //userRef.child("date1").setValue(host_date1.getText().toString());
-                    //userRef.child("date2").setValue(host_date2.getText().toString());
+                    userRef.child("date1").setValue(host_date1.getText().toString());
+                    userRef.child("date2").setValue(host_date2.getText().toString());
 
                     userRef.child("profileType").setValue("host");
                     userRef.child("distance").setValue(hdistanceEtxt.getText().toString());

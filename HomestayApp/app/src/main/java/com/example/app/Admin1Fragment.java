@@ -40,6 +40,8 @@ public class Admin1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        if(MainActivity.loginType.equals("admin"))
+            MainActivity.userName = MainActivity.returnName;
         View rootView = inflater.inflate(R.layout.fragment_admin1, container, false);
 
         saveBtn = (Button) rootView.findViewById(R.id.btn_aSave);
